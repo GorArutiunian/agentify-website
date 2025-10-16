@@ -13,10 +13,10 @@ export function LogosStrip() {
 
   return (
     <section className="py-12 bg-white border-b border-gray-100">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container">
         <div className="text-center mb-8">
-          <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">
-            Integrates with
+          <p className="text-sm font-medium text-brand-600 uppercase tracking-wide">
+            Powered by professional tools
           </p>
         </div>
         

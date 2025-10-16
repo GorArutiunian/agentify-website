@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import { agents as allAgents, industries } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 import { AgentFilter } from '@/components/agent-filter'
-import { BackgroundShapes } from '@/components/background-shapes'
+import { LogosStrip } from '@/components/logos-strip'
 
 export default function AgentsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState<string>('All')
@@ -37,7 +37,7 @@ export default function AgentsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20 min-h-[50vh] flex items-center">
+      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[50vh] flex items-center">
         {/* Geometric Background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45 animate-pulse"></div>
@@ -45,17 +45,17 @@ export default function AgentsPage() {
           <div className="absolute top-40 left-40 w-24 h-24 bg-[#E93E8F] rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
         </div>
         
-        <div className="container-responsive relative z-10">
+        <div className="section-container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8">
-              <span className="text-white">OUR</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">
-                AI AGENTS
+            <h1 className="text-4xl md:text-5xl font-bold mb-8">
+              <span className="text-brand-900">Our</span><br />
+              <span className="text-brand-600">
+                AI Agents
               </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-brand-700 leading-relaxed max-w-3xl mx-auto">
               Stop losing revenue to manual admin, slow follow-ups, and missed opportunities. 
-              Get specialized AI agents that automate your busiest workflows—at <strong className="text-[#E93E8F]">30% below market rates</strong> with 
+              Get specialized AI agents that automate your busiest workflows—at <strong className="text-brand-600">30% below market rates</strong> with 
               fast deployment and managed hosting.
             </p>
           </div>
@@ -63,18 +63,14 @@ export default function AgentsPage() {
       </section>
 
       {/* Agents Grid Section */}
-      <section className="py-16 relative" style={{
-        backgroundColor: '#2D1B69',
-        backgroundImage: `radial-gradient(circle, rgba(233, 62, 143, 0.1) 1px, transparent 1px)`,
-        backgroundSize: '20px 20px'
-      }}>
-        <div className="container-responsive relative z-10">
+      <section className="section-padding bg-white">
+        <div className="section-container">
           {/* Section Intro */}
           <div className="text-center mb-12">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                      {selectedIndustry === 'All' ? 'MOST POPULAR' : `${selectedIndustry}`} <span className="text-[#E93E8F]">AI AGENTS</span>
-                    </h2>
-            <p className="text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-semibold text-brand-900 mb-4">
+              {selectedIndustry === 'All' ? 'Most Popular' : selectedIndustry} <span className="text-brand-600">AI Agents</span>
+            </h2>
+            <p className="text-base md:text-lg text-brand-700 max-w-4xl mx-auto leading-relaxed">
               {selectedIndustry === 'All' 
                 ? `Our most popular agents with transparent pricing. Each industry's #1 performing bot with 
                   30% below market rates. Includes setup, hosting, monitoring, and integrations.`
@@ -138,6 +134,8 @@ export default function AgentsPage() {
           </div>
         </div>
       </section>
+      
+      <LogosStrip />
     </>
   )
 }

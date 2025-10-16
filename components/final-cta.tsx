@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { CalendlyModal } from '@/components/calendly-modal'
+import { TrustBadge } from '@/components/trust-badge'
 
 export function FinalCTA() {
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-[#2D1B69] to-[#1a0f3a] text-white">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-gradient-to-br from-brand-600 to-brand-500 text-white">
+      <div className="section-container">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
             Ready to free up 10+ hours a week?
@@ -16,7 +17,7 @@ export function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <CalendlyModal 
               label="Book a 15-min consult" 
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#E93E8F] to-[#D63384] text-white font-bold text-base sm:text-lg rounded-full hover:scale-105 transition-transform shadow-lg w-full sm:w-auto text-center"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-brand-600 font-bold text-base sm:text-lg rounded-full hover:bg-gray-50 hover:scale-105 transition-all shadow-lg w-full sm:w-auto text-center"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.plausible) {
                   window.plausible('BookConsult_Click', { props: { location: 'final_cta' } })
@@ -34,6 +35,10 @@ export function FinalCTA() {
           <p className="text-sm text-gray-400 mt-4">
             Free consultation • No commitment • Get started today
           </p>
+          
+          <div className="mt-8 max-w-md mx-auto">
+            <TrustBadge />
+          </div>
         </div>
       </div>
     </section>

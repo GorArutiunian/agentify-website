@@ -32,8 +32,8 @@ export function SocialProofCompact() {
   }, [])
 
   return (
-    <section className="py-16 sm:py-20 bg-white">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-white">
+      <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
             What our clients say
