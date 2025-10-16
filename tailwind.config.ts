@@ -12,39 +12,18 @@ const config: Config = {
   theme: {
     extend: {
         colors: {
-          // Agentify Brand Colors
-          primary: {
-            DEFAULT: '#E93E8F',
-            dark: '#8A2BE2'
-          },
-          secondary: {
-            DEFAULT: '#1A0F2D'
-          },
-          accent: {
-            pink: '#E93E8F',
-            purple: '#8A2BE2',
-            magenta: '#FF1493'
-          },
-          // New Brand Gradient System
+          // Agentify Brand Tokens
           brand: {
-            'purple-dark': '#4c0072',
-            'purple-bright': '#8a00ff',
-            'pink-hot': '#ff3c91',
-            'magenta': '#b833ff'
+            deep: '#0e0621',
+            purple: '#2a0a4a',
+            'purple-2': '#4c0072',
+            magenta: '#b833ff',
+            hotpink: '#ff3c91'
           },
-          neutral: '#FFF0F0',
-          light: {
-            blue: '#FFE5E5',
-            sky: '#FFE5E5',
-            peach: '#FFE5E5',
-            cream: '#FFF8F5',
-            pink: '#FFF0F0',
-            rose: '#FFE5E5'
+          text: {
+            high: '#f7f7fb'
           },
-          dark: {
-            purple: '#1A0F2D',
-            navy: '#0F172A'
-          }
+          glass: 'rgba(255,255,255,0.06)'
         },
         backgroundImage: {
           'agentify-primary': 'linear-gradient(135deg, #4c0072 0%, #8a00ff 50%, #ff3c91 100%)',

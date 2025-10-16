@@ -1,12 +1,10 @@
 "use client"
 import { useTranslations } from 'next-intl'
 import { HeroV3 } from '@/components/hero-v3'
-import { IndustriesBarV2 } from '@/components/industries-bar-v2'
-// import { HowItWorks } from '@/components/how-it-works'
-import { TestimonialsV2 } from '@/components/testimonials-v2'
-import { Philosophy } from '@/components/philosophy'
-import { FinalCTAV2 } from '@/components/final-cta-v2'
 import { PoweredTools } from '@/components/powered-tools'
+import { IndustriesScroll } from '@/components/industries-scroll'
+import { TestimonialsV2 } from '@/components/testimonials-v2'
+import { FinalCTAV2 } from '@/components/final-cta-v2'
 import { agents as allAgents } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 
@@ -42,15 +40,12 @@ export default function HomePage() {
       {/* Hero Section with Phone Chat UI */}
       <HeroV3 />
 
-      {/* Industries Bar */}
-      <IndustriesBarV2 />
-      
       {/* Popular agents section */}
-      <section className="py-24 bg-gradient-to-br from-brand-purple-dark to-brand-purple-bright">
+      <section className="py-24 bg-[#130724]">
         <div className="container-responsive">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink-hot to-brand-magenta">Hot Agents</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-text-high mb-6">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">Hot Agents</span>
             </h2>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Ready-made AI agents that handle your most time-consuming tasks automatically. 
@@ -80,7 +75,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <a 
               href="/agents"
-              className="inline-flex items-center text-brand-pink-hot hover:text-brand-magenta font-medium transition-colors"
+              className="inline-flex items-center text-brand-hotpink hover:text-brand-magenta font-medium transition-colors"
             >
               View all 50 agents →
             </a>
@@ -88,11 +83,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* <HowItWorks /> */}
-      <TestimonialsV2 />
-      <Philosophy />
-      <FinalCTAV2 />
+      {/* Powered by professional tools */}
       <PoweredTools />
+
+      {/* Industries scroll */}
+      <IndustriesScroll />
+
+      {/* Testimonials */}
+      <TestimonialsV2 />
+
+      {/* Final CTA */}
+      <FinalCTAV2 />
     </>
   )
 }

@@ -39,7 +39,7 @@ export function TestimonialsV2() {
     return Array.from({ length: 5 }, (_, i) => (
       <svg
         key={i}
-        className={`w-5 h-5 ${i < rating ? 'text-brand-pink-hot' : 'text-gray-300'}`}
+        className={`w-5 h-5 ${i < rating ? 'text-brand-hotpink' : 'text-gray-300'}`}
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -49,7 +49,7 @@ export function TestimonialsV2() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-purple-dark to-brand-purple-bright">
+    <section className="py-24 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91]">
       <div className="container-responsive">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -87,7 +87,7 @@ export function TestimonialsV2() {
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${
                   index === currentTestimonial 
-                    ? 'bg-brand-pink-hot shadow-agentify-glow' 
+                    ? 'bg-brand-hotpink shadow-lg shadow-brand-hotpink/50' 
                     : 'bg-white/30 hover:bg-white/50'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}

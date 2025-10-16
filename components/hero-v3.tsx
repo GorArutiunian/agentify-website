@@ -8,8 +8,7 @@ export function HeroV3() {
   const chatMessages = [
     "Hi, I'm your AI assistant. How can I help today?",
     "Schedule a meeting",
-    "Sure, let's find a time.",
-    "Perfect! Meeting scheduled for tomorrow at 2 PM."
+    "Sure, let's find a time."
   ]
 
   useEffect(() => {
@@ -17,28 +16,20 @@ export function HeroV3() {
       setCurrentMessage((prev) => (prev + 1) % chatMessages.length)
     }, 3000)
     return () => clearInterval(interval)
-  }, [])
+  }, [chatMessages.length])
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-brand-purple-dark via-brand-purple-bright to-brand-pink-hot overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] py-16 md:py-20">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-agentify-glow opacity-50"></div>
-      <div className="absolute top-20 right-20 w-64 h-64 bg-brand-pink-hot/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-20 w-64 h-64 bg-brand-hotpink/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-brand-magenta/10 rounded-full blur-3xl"></div>
       
-      <div className="container-responsive py-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+      <div className="container-responsive relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white text-sm font-medium">
-              AI Agents for SMBs
-            </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink-hot to-white">
-                Automate your busywork.
-              </span><br />
-              <span className="text-white">Grow faster.</span>
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-text-high">
+              AI agents for smart businesses.
             </h1>
             
             <p className="text-xl text-gray-200 leading-relaxed">
@@ -48,11 +39,11 @@ export function HeroV3() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <CalendlyModal 
                 label="Book a 15-min consult" 
-                className="px-8 py-4 bg-gradient-to-r from-brand-pink-hot to-brand-magenta text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-agentify-glow flex items-center gap-2" 
+                className="px-8 py-4 bg-gradient-to-r from-[#ff3c91] to-[#b833ff] text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2" 
               />
               <a 
                 href="/agents" 
-                className="px-8 py-4 border-2 border-white text-white font-bold text-lg rounded-xl hover:bg-white hover:text-brand-purple-dark transition-colors"
+                className="px-8 py-4 ring-1 ring-white/30 hover:ring-[#ff3c91] text-white font-bold text-lg rounded-xl hover:bg-white/5 transition-all duration-300"
               >
                 See 50+ agents
               </a>
@@ -60,16 +51,16 @@ export function HeroV3() {
             
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <div className="text-2xl font-bold text-white">≤ 2 min</div>
+              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
+                <div className="text-2xl font-bold text-text-high">≤ 2 min</div>
                 <div className="text-gray-300 text-sm">avg response</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <div className="text-2xl font-bold text-white">30-50% fewer</div>
+              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
+                <div className="text-2xl font-bold text-text-high">30-50% fewer</div>
                 <div className="text-gray-300 text-sm">no-shows</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                <div className="text-2xl font-bold text-white">Up to 40%</div>
+              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
+                <div className="text-2xl font-bold text-text-high">Up to 40%</div>
                 <div className="text-gray-300 text-sm">more qualified leads</div>
               </div>
             </div>
@@ -79,12 +70,12 @@ export function HeroV3() {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
               {/* Phone Frame */}
-              <div className="w-80 h-[600px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
+              <div className="w-80 h-[500px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
                 <div className="w-full h-full bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-6 flex flex-col">
                   {/* Phone Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-brand-pink-hot to-brand-magenta rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-r from-brand-hotpink to-brand-magenta rounded-full flex items-center justify-center">
                         <span className="text-white text-sm font-bold">A</span>
                       </div>
                       <div>
@@ -110,7 +101,7 @@ export function HeroV3() {
                           className={`max-w-xs px-4 py-3 rounded-2xl ${
                             index % 2 === 0
                               ? 'bg-white/10 text-white'
-                              : 'bg-gradient-to-r from-brand-pink-hot to-brand-magenta text-white'
+                              : 'bg-gradient-to-r from-brand-hotpink to-brand-magenta text-white'
                           }`}
                         >
                           <p className="text-sm">{message}</p>
@@ -137,7 +128,7 @@ export function HeroV3() {
                     <div className="flex-1 bg-white/10 rounded-full px-4 py-2">
                       <div className="text-gray-400 text-sm">Type a message...</div>
                     </div>
-                    <div className="w-10 h-10 bg-gradient-to-r from-brand-pink-hot to-brand-magenta rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-brand-hotpink to-brand-magenta rounded-full flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                       </svg>
@@ -147,7 +138,7 @@ export function HeroV3() {
               </div>
               
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-pink-hot/20 to-brand-magenta/20 rounded-[3rem] blur-xl -z-10"></div>
+              <div className="absolute inset-0 shadow-[0_0_80px_-30px] shadow-brand-magenta rounded-[3rem] -z-10"></div>
             </div>
           </div>
         </div>

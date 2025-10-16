@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-  @apply bg-neutral text-secondary antialiased;
+  @apply bg-[#130724] text-text-high antialiased;
 }
 
 .container-responsive {

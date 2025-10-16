@@ -30,19 +30,19 @@ export function Philosophy() {
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-br from-brand-purple-dark to-brand-purple-bright">
+    <section className="py-24 bg-[#130724]">
       <div className="container-responsive">
         <div className="max-w-6xl mx-auto">
           {/* Our Philosophy Section */}
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold mb-16">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink-hot to-brand-magenta">Philosophy</span>
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">Philosophy</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               {philosophyItems.map((item, index) => (
                 <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl shadow-agentify-card p-8 border border-white/10 hover:shadow-agentify-glow transition-all duration-300 group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-brand-pink-hot to-brand-magenta rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-gradient-to-r from-brand-hotpink to-brand-magenta rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
