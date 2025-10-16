@@ -48,13 +48,13 @@ export function BottomToolbar() {
 
 
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/about`}
               className={`flex flex-col items-center gap-1 text-xs ${
-                isActive(`/${locale}/contact`) ? 'text-[#2D1B69] font-semibold' : 'text-gray-600'
+                isActive(`/${locale}/about`) ? 'text-[#2D1B69] font-semibold' : 'text-gray-600'
               }`}
             >
               <Phone className="w-5 h-5" />
-              <span>{t('contact')}</span>
+              <span>About</span>
             </Link>
           </div>
         </div>
