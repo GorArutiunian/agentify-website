@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Page background utility */
+.page-bg {
+  background: var(--page-bg, #0F0A1E);
+  background-image: var(--page-bg-image, radial-gradient(1200px 800px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1200px 800px at 10% 120%, rgba(236,72,153,.20), transparent 60%));
+}
+
 :root {
   --radius: 12px;
   
@@ -36,7 +42,7 @@ html, body {
 }
 
 body {
-  @apply bg-neutral text-secondary antialiased;
+  @apply bg-brand-darkest text-white antialiased;
 }
 
 .container-responsive {

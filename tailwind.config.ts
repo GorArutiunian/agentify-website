@@ -12,31 +12,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#E93E8F',
-          dark: '#8A2BE2'
-        },
-        secondary: {
-          DEFAULT: '#1A0F2D'
-        },
-        accent: {
-          pink: '#E93E8F',
-          purple: '#8A2BE2',
-          magenta: '#FF1493'
-        },
-        neutral: '#FFF0F0',
-        light: {
-          blue: '#FFE5E5',
-          sky: '#FFE5E5',
-          peach: '#FFE5E5',
-          cream: '#FFF8F5',
-          pink: '#FFF0F0',
-          rose: '#FFE5E5'
-        },
-        dark: {
-          purple: '#1A0F2D',
-          navy: '#0F172A'
+        brand: {
+          darkest: '#0F0A1E',   // page bg (near-black purple)
+          dark:    '#1B1135',   // section bg
+          purple:  '#6D28D9',   // violet-700
+          pink:    '#EC4899',   // pink-500
+          glow:    '#A855F7',   // violet-500
         }
+      },
+      backgroundImage: {
+        'agentify-radial': 'radial-gradient(1200px 800px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1200px 800px at 10% 120%, rgba(236,72,153,.20), transparent 60%)',
+        'agentify-hero': 'linear-gradient(180deg, #160D2A 0%, #0F0A1E 100%)',
+        'agentify-card': 'linear-gradient(180deg, rgba(109,40,217,.35), rgba(236,72,153,.25))',
+      },
+      boxShadow: {
+        'glow': '0 0 40px rgba(168,85,247,.35)',
       },
       borderRadius: {
         lg: '12px',

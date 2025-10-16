@@ -1,13 +1,12 @@
 "use client"
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
-import { HeroV2 } from '@/components/hero-v2'
+import HeroV2 from '@/components/hero-v2'
+import { IndustriesBar } from '@/components/industries-bar'
 import { LogosStrip } from '@/components/logos-strip'
 import { HowItWorks } from '@/components/how-it-works'
 import { SocialProofCompact } from '@/components/social-proof-compact'
 import { FinalCTA } from '@/components/final-cta'
-import { IndustryScroll } from '@/components/industry-scroll'
-import { TestimonialsExpanded } from '@/components/testimonials-expanded'
 import { agents as allAgents } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 
@@ -39,16 +38,17 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroV2 />
+      <IndustriesBar />
       <LogosStrip />
       
       {/* Popular agents section - show top 6 only */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-brand-dark/30">
         <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
               Popular agents
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto">
               Our most requested AI agents that deliver immediate results
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link 
               href="/agents"
-              className="inline-flex items-center text-[#E93E8F] hover:text-[#D63384] font-medium transition-colors"
+              className="inline-flex items-center text-brand-pink hover:text-brand-glow font-medium transition-colors"
               onClick={() => {
                 if (typeof window !== 'undefined' && window.plausible) {
                   window.plausible('ViewAllAgents_Click', { props: { location: 'popular_agents' } })
@@ -95,9 +95,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <IndustryScroll />
       <HowItWorks />
-      <TestimonialsExpanded />
+      <SocialProofCompact />
       <FinalCTA />
     </>
   )
