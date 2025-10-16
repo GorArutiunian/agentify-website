@@ -18,7 +18,16 @@ const config: Config = {
           purple:  '#6D28D9',
           pink:    '#EC4899',
           glow:    '#A855F7',
-        }
+        },
+        // Agentify brand colors
+        secondary: '#2D1B69',
+        primary: '#E93E8F',
+        'accent-purple': '#3D2A7A',
+        'accent-pink': '#FF6B9D',
+        'brand-pink': '#E93E8F',
+        'brand-glow': '#A855F7',
+        'light-purple': '#E0D7FF',
+        'bright-pink': '#FF6B9D',
       },
       backgroundImage: {
         'agentify-radial': 'radial-gradient(1000px 700px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1000px 700px at 10% 120%, rgba(236,72,153,.22), transparent 60%)',

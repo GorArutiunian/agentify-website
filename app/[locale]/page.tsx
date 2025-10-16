@@ -8,6 +8,10 @@ import LogosStripBottom from '@/components/logos-strip'
 import { HowItWorks } from '@/components/how-it-works'
 import { SocialProofCompact } from '@/components/social-proof-compact'
 import { FinalCTA } from '@/components/final-cta'
+import { TestimonialsSection } from '@/components/testimonials-section'
+import { CTASection } from '@/components/cta-section'
+import { PhilosophySection } from '@/components/philosophy-section'
+import { AIAgentsSection } from '@/components/ai-agents-section'
 import { agents as allAgents } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 
@@ -194,6 +198,10 @@ export default function HomePage() {
       </section>
 
       <HowItWorks />
+      <TestimonialsSection />
+      <CTASection />
+      <PhilosophySection />
+      <AIAgentsSection />
       <SocialProofCompact />
       <FinalCTA />
       <LogosStripBottom />
