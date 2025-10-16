@@ -8,7 +8,7 @@ type Props = {
 
 export function CalendlyModal({ label, className }: Props) {
   const [open, setOpen] = useState(false)
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/calendly/15min'
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/15min'
 
   return (
     <>

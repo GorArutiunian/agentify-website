@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 
 export default function SchedulePage() {
   const calendlyUrl = useMemo(() => (
-    process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/calendly/15min'
+    process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/15min'
   ), [])
 
   return (

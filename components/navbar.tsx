@@ -29,6 +29,13 @@ export function Navbar() {
       
       setScrollY(currentScrollY)
       
+      // Disable scroll-based hiding on mobile devices (screen width < 768px)
+      const isMobile = window.innerWidth < 768
+      if (isMobile) {
+        setIsVisible(true)
+        return
+      }
+      
       if (currentScrollY < earlyHidePoint) {
         setIsVisible(true)
       } else {

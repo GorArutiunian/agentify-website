@@ -1,5 +1,5 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { siteConfig } from '@/site.config'
 
 export const metadata: Metadata = {
@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: { icon: "/favicon.png" },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
