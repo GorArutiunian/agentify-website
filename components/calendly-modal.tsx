@@ -4,15 +4,24 @@ import { useState } from 'react'
 type Props = {
   label: string
   className?: string
+  onClick?: () => void
 }
 
-export function CalendlyModal({ label, className }: Props) {
+export function CalendlyModal({ label, className, onClick }: Props) {
   const [open, setOpen] = useState(false)
   const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/15min'
 
   return (
     <>
-      <button onClick={() => setOpen(true)} className={className}>{label}</button>
+      <button 
+        onClick={() => {
+          setOpen(true)
+          onClick?.()
+        }} 
+        className={className}
+      >
+        {label}
+      </button>
       {open && (
         <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2D1B69]/95">
           {/* Backdrop - clicking it closes the modal */}

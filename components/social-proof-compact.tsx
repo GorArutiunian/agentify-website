@@ -53,13 +53,13 @@ export function SocialProofCompact() {
                 ))}
               </div>
               <blockquote className="text-lg lg:text-xl text-gray-700 mb-6 leading-relaxed">
-                "{testimonials[currentIndex].quote}"
+                "{testimonials[currentIndex]?.quote}"
               </blockquote>
               <div className="text-gray-900 font-semibold">
-                {testimonials[currentIndex].person}
+                {testimonials[currentIndex]?.person}
               </div>
               <div className="text-gray-600">
-                {testimonials[currentIndex].company}
+                {testimonials[currentIndex]?.company}
               </div>
             </div>
             
