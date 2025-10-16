@@ -1,7 +1,9 @@
 "use client"
 import { useTranslations } from 'next-intl'
 import { CalendlyModal } from '@/components/calendly-modal'
-import { BackgroundShapes } from '@/components/background-shapes'
+import { TrustBadge } from '@/components/trust-badge'
+import { LogosStrip } from '@/components/logos-strip'
+import { Zap, Target, TrendingUp, Users, ArrowRight, CheckCircle } from 'lucide-react'
 
 export default function AboutPage() {
   const t = useTranslations('about')
@@ -9,20 +11,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-secondary text-white py-20 min-h-[60vh] flex items-center">
-        {/* Geometric Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-primary transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-accent-purple transform -rotate-12"></div>
-        </div>
-        
-        <div className="container-responsive relative z-10">
+      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[60vh] flex items-center">
+        <div className="section-container relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8">
-              <span className="text-white">ABOUT</span><br />
-              <span className="text-primary">AGENTIFY</span>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-8">
+              <span className="text-brand-900">About</span><br />
+              <span className="text-brand-600">Agentify</span>
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-lg sm:text-xl text-brand-700 leading-relaxed">
               We're on a mission to revolutionize business operations through intelligent AI automation.
             </p>
           </div>
@@ -30,24 +26,14 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#2D1B69'}}>
-        <BackgroundShapes variant="light" intensity="low" />
-        
-        {/* Additional Decorative Shapes for Our Story */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-24 h-24 bg-primary/15 transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-20 h-20 bg-[#E93E8F]/20 rounded-full blur-md"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-accent-purple/15 transform -rotate-12"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-28 h-28 bg-primary/10 rounded-full blur-lg"></div>
-        </div>
-
-        <div className="container-responsive relative z-10">
+      <section className="section-padding bg-white">
+        <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                OUR <span className="text-white">STORY</span>
+              <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900">
+                Our <span className="text-brand-600">Story</span>
               </h2>
-              <div className="space-y-6 text-lg text-white">
+              <div className="space-y-6 text-base text-brand-700">
                 <p>
                   Founded with a vision to democratize AI automation, Agentify was born from the belief that every business, regardless of size, deserves access to cutting-edge artificial intelligence solutions.
                 </p>
@@ -61,16 +47,12 @@ export default function AboutPage() {
             </div>
             
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-3xl p-8 text-white">
+              <div className="bg-gradient-to-br from-brand-600 to-brand-500 rounded-3xl p-8 text-white">
                 <div className="space-y-6">
                   <div className="text-6xl font-bold">70+</div>
                   <div className="text-xl">Businesses Transformed</div>
                   <div className="text-sm opacity-80">And counting...</div>
                 </div>
-              </div>
-              
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent-pink rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AI</span>
               </div>
             </div>
           </div>
@@ -78,69 +60,45 @@ export default function AboutPage() {
       </section>
 
       {/* Our Philosophy Section */}
-      <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#2D1B69'}}>
-        {/* Background Shapes */}
-        <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-[#E93E8F]/10 rounded-full blur-xl"></div>
-          <div className="absolute top-32 right-20 w-24 h-24 bg-[#E93E8F]/15 rounded-full blur-lg"></div>
-          <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-[#E93E8F]/8 rounded-full blur-2xl"></div>
-          <div className="absolute bottom-10 right-1/3 w-28 h-28 bg-[#E93E8F]/12 rounded-full blur-lg"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-[#E93E8F]/5 rounded-full blur-3xl"></div>
-          <div className="absolute top-20 right-1/3 w-20 h-20 bg-[#E93E8F]/20 rounded-full blur-lg"></div>
-          <div className="absolute bottom-32 left-10 w-36 h-36 bg-[#E93E8F]/6 rounded-full blur-2xl"></div>
-          <div className="absolute top-60 left-1/3 w-16 h-16 bg-[#E93E8F]/25 rounded-full blur-md"></div>
-          <div className="absolute bottom-60 right-10 w-44 h-44 bg-[#E93E8F]/4 rounded-full blur-3xl"></div>
-          <div className="absolute top-16 left-1/2 w-12 h-12 bg-[#E93E8F]/30 rounded-full blur-sm"></div>
-          <div className="absolute bottom-16 right-1/4 w-52 h-52 bg-[#E93E8F]/3 rounded-full blur-3xl"></div>
-          <div className="absolute top-80 left-20 w-18 h-18 bg-[#E93E8F]/22 rounded-full blur-lg"></div>
-          <div className="absolute bottom-80 left-1/2 w-48 h-48 bg-[#E93E8F]/6 rounded-full blur-2xl"></div>
-          <div className="absolute top-40 right-10 w-14 h-14 bg-[#E93E8F]/28 rounded-full blur-md"></div>
-          <div className="absolute bottom-40 left-1/3 w-32 h-32 bg-[#E93E8F]/9 rounded-full blur-xl"></div>
-          <div className="absolute top-100 right-1/2 w-20 h-20 bg-[#E93E8F]/18 rounded-full blur-lg"></div>
-          <div className="absolute bottom-100 left-1/5 w-56 h-56 bg-[#E93E8F]/2 rounded-full blur-3xl"></div>
-          {/* Additional rectangular shapes */}
-          <div className="absolute top-32 left-20 w-20 h-20 bg-primary/15 transform rotate-12"></div>
-          <div className="absolute bottom-32 right-20 w-24 h-24 bg-accent-purple/10 transform -rotate-45"></div>
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-[#E93E8F]/20 transform rotate-30"></div>
-        </div>
-        <div className="container-responsive relative z-10">
+      <section className="section-padding bg-brand-50">
+        <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-12">
-              OUR <span className="text-[#E93E8F]">PHILOSOPHY</span>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-12">
+              Our <span className="text-brand-600">Philosophy</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white border-2 border-[#E93E8F]/20 rounded-2xl p-8 shadow-lg">
-                <div className="w-16 h-16 bg-[#E93E8F] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-white font-bold text-xl">→</span>
+              <div className="bg-white border border-brand-100 rounded-2xl p-8 shadow-sm">
+                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#2D1B69] mb-4">SPEED</h3>
-                <p className="text-gray-600">We believe in lightning-fast implementation and immediate results. Time is money, and we help you save both.</p>
+                <h3 className="text-xl font-semibold text-brand-900 mb-4">Speed</h3>
+                <p className="text-brand-700">We believe in lightning-fast implementation and immediate results. Time is money, and we help you save both.</p>
               </div>
               
-              <div className="bg-white border-2 border-[#E93E8F]/20 rounded-2xl p-8 shadow-lg">
-                <div className="w-16 h-16 bg-[#2D1B69] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-white font-bold text-xl">✓</span>
+              <div className="bg-white border border-brand-100 rounded-2xl p-8 shadow-sm">
+                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#2D1B69] mb-4">PRECISION</h3>
-                <p className="text-gray-600">Every AI agent is meticulously crafted to deliver exact results, eliminating errors and maximizing efficiency.</p>
+                <h3 className="text-xl font-semibold text-brand-900 mb-4">Precision</h3>
+                <p className="text-brand-700">Every AI agent is meticulously crafted to deliver exact results, eliminating errors and maximizing efficiency.</p>
               </div>
               
-              <div className="bg-white border-2 border-[#E93E8F]/20 rounded-2xl p-8 shadow-lg">
-                <div className="w-16 h-16 bg-[#E93E8F] rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-white font-bold text-xl">↑</span>
+              <div className="bg-white border border-brand-100 rounded-2xl p-8 shadow-sm">
+                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-[#2D1B69] mb-4">SCALE</h3>
-                <p className="text-gray-600">Our solutions grow with your business, handling increased workload without breaking a sweat.</p>
+                <h3 className="text-xl font-semibold text-brand-900 mb-4">Scale</h3>
+                <p className="text-brand-700">Our solutions grow with your business, handling increased workload without breaking a sweat.</p>
               </div>
             </div>
             
-            <div className="bg-white text-[#2D1B69] rounded-3xl p-12 border-2 border-[#E93E8F]/20">
-              <h3 className="text-2xl font-bold mb-6">MASTERY DEMANDS FOCUS</h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            <div className="bg-white text-brand-900 rounded-2xl p-8 border border-brand-100">
+              <h3 className="text-xl font-semibold mb-4">Mastery Demands Focus</h3>
+              <p className="text-brand-700 leading-relaxed mb-4">
                 We don't offer web design, SEO, social media management, or any other services. We do one thing and we do it exceptionally well: AI automation.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-brand-700 leading-relaxed">
                 This laser focus allows us to stay at the forefront of AI technology and deliver results that generalist agencies simply cannot match.
               </p>
             </div>
@@ -149,26 +107,14 @@ export default function AboutPage() {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#2D1B69'}}>
-        <BackgroundShapes variant="light" intensity="low" />
-        
-        {/* Additional Decorative Shapes for Team Section */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-28 h-28 bg-primary/20 rounded-full blur-md"></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-[#E93E8F]/15 transform rotate-45"></div>
-          <div className="absolute bottom-20 left-1/4 w-32 h-32 bg-accent-purple/10 rounded-full blur-lg"></div>
-          <div className="absolute bottom-40 right-1/3 w-24 h-24 bg-primary/15 transform -rotate-12"></div>
-          <div className="absolute top-1/2 right-10 w-16 h-16 bg-[#E93E8F]/20 transform rotate-45"></div>
-          <div className="absolute bottom-60 left-10 w-36 h-36 bg-primary/10 rounded-full blur-xl"></div>
-        </div>
-
-        <div className="container-responsive relative z-10">
+      <section className="section-padding bg-white">
+        <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              MEET THE <span className="text-white">A-TEAM</span>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">
+              Meet the <span className="text-brand-600">Team</span>
             </h2>
-            <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto">
-              Founded by AI experts who have spent years perfecting the art of intelligent automation. With our elusive company culture, caliber of clientele, and deep technical expertise, we've attracted the best talent globally.
+            <p className="text-base sm:text-lg text-brand-700 max-w-3xl mx-auto">
+              Founded by AI experts who have spent years perfecting the art of intelligent automation. With our company culture, caliber of clientele, and deep technical expertise, we've attracted the best talent globally.
             </p>
           </div>
           
@@ -176,28 +122,27 @@ export default function AboutPage() {
             {[
               {
                 name: "Ashot Zargaryan",
-                role: "HEAD OF OPERATIONS",
+                role: "Head of Operations",
                 description: "Client relations and business development specialist"
               },
               {
                 name: "Gor Arutiunian",
-                role: "FOUNDER & CEO",
+                role: "Founder & CEO",
                 description: "AI automation expert specializing in business process optimization"
               },
               {
                 name: "Arsen Hambardzumyan",
-                role: "LEAD DEVELOPER",
+                role: "Lead Developer",
                 description: "Full-stack developer and AI integration specialist"
               }
             ].map((member, index) => (
               <div key={index} className="text-center group">
-                {/* Beautiful gradient circle with initials instead of images */}
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] flex items-center justify-center group-hover:scale-110 transition-transform border-4 border-white/20 shadow-xl">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-brand-600 to-brand-500 flex items-center justify-center group-hover:scale-110 transition-transform border-4 border-brand-100 shadow-lg">
                   <span className="text-white font-bold text-xl md:text-2xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-[#E93E8F] font-bold text-xs md:text-sm mb-3">{member.role}</p>
-                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{member.description}</p>
+                <h3 className="text-lg md:text-xl font-semibold text-brand-900 mb-2">{member.name}</h3>
+                <p className="text-brand-600 font-medium text-sm mb-3">{member.role}</p>
+                <p className="text-brand-700 text-sm leading-relaxed">{member.description}</p>
               </div>
             ))}
           </div>
@@ -205,43 +150,33 @@ export default function AboutPage() {
       </section>
 
       {/* Our Process Section */}
-      <section className="bg-secondary text-white py-20 relative overflow-hidden">
-        {/* Decorative Background Shapes */}
-        <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-24 h-24 bg-[#E93E8F]/10 transform rotate-45"></div>
-          <div className="absolute top-20 right-20 w-32 h-32 bg-primary/15 rounded-full"></div>
-          <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-accent-purple/10 transform -rotate-12"></div>
-          <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-[#E93E8F]/8 rounded-full blur-lg"></div>
-          <div className="absolute top-1/2 left-10 w-16 h-16 bg-primary/20 transform rotate-45"></div>
-          <div className="absolute top-60 right-10 w-36 h-36 bg-[#E93E8F]/5 rounded-full blur-xl"></div>
-        </div>
-
-        <div className="container-responsive relative z-10">
+      <section className="section-padding bg-brand-50">
+        <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">OUR PROCESS</h2>
-            <p className="text-lg sm:text-xl text-gray-300">How we transform your business operations</p>
+            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">Our Process</h2>
+            <p className="text-base sm:text-lg text-brand-700">How we transform your business operations</p>
           </div>
           
           <div className="grid md:grid-cols-4 gap-8 relative">
             {[
               {
                 step: "01",
-                title: "DISCOVERY",
+                title: "Discovery",
                 description: "We analyze your current processes and identify automation opportunities"
               },
               {
                 step: "02", 
-                title: "DESIGN",
+                title: "Design",
                 description: "Custom AI agents are designed specifically for your business needs"
               },
               {
                 step: "03",
-                title: "IMPLEMENT",
+                title: "Implement",
                 description: "Seamless integration with your existing systems and workflows"
               },
               {
                 step: "04",
-                title: "OPTIMIZE",
+                title: "Optimize",
                 description: "Continuous monitoring and optimization for maximum performance"
               }
             ].map((phase, index) => (
@@ -249,17 +184,15 @@ export default function AboutPage() {
                 {/* Arrow connecting to next step - hidden on mobile */}
                 {index < 3 && (
                   <div className="hidden md:block absolute top-10 -right-4 z-0">
-                    <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 10H28M28 10L20 2M28 10L20 18" stroke="#E93E8F" strokeWidth="2"/>
-                    </svg>
+                    <ArrowRight className="w-6 h-6 text-brand-300" />
                   </div>
                 )}
                 
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-xl">
+                <div className="w-20 h-20 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg">
                   <span className="text-white font-bold text-2xl">{phase.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">{phase.title}</h3>
-                <p className="text-gray-300">{phase.description}</p>
+                <h3 className="text-xl font-semibold text-brand-900 mb-4">{phase.title}</h3>
+                <p className="text-brand-700">{phase.description}</p>
               </div>
             ))}
           </div>
@@ -267,27 +200,31 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 relative" style={{backgroundColor: '#2D1B69'}}>
-        <BackgroundShapes variant="light" intensity="medium" />
-        <div className="container-responsive text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-8">
-            <span className="text-white">READY TO START</span><br />
-            YOUR AI JOURNEY?
+      <section className="section-padding bg-gradient-to-br from-brand-600 to-brand-500 text-white">
+        <div className="section-container text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
+            Ready to start your AI journey?
           </h2>
           
-          <p className="text-lg sm:text-xl text-white mb-12 max-w-3xl mx-auto px-4">
+          <p className="text-lg text-gray-200 mb-12 max-w-3xl mx-auto">
             If you're ready to revolutionize your business operations with AI automation, it would be our honor to find out. Schedule your FREE discovery call below.
           </p>
           
           <CalendlyModal 
             label="Speak To Our Team Today" 
-            className="px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 bg-gradient-to-r from-primary to-accent-purple text-white font-bold text-lg sm:text-xl md:text-2xl rounded-full hover:scale-105 transition-transform shadow-2xl w-full sm:w-auto max-w-md mx-auto" 
+            className="px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 bg-white text-brand-600 font-bold text-lg sm:text-xl md:text-2xl rounded-full hover:bg-gray-50 hover:scale-105 transition-all shadow-2xl w-full sm:w-auto max-w-md mx-auto" 
           />
-          <p className="text-gray-500 mt-4 text-center">
+          <p className="text-gray-300 mt-4 text-center">
             Schedule Your FREE Audit Call Now
           </p>
+          
+          <div className="mt-8 max-w-md mx-auto">
+            <TrustBadge />
+          </div>
         </div>
       </section>
+      
+      <LogosStrip />
     </>
   )
 }

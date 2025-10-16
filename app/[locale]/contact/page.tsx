@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CalendlyModal } from '@/components/calendly-modal'
-import { BackgroundShapes } from '@/components/background-shapes'
+import { LogosStrip } from '@/components/logos-strip'
+import { MessageCircle, Mail, Clock, Shield } from 'lucide-react'
 
 const schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -42,20 +43,14 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-secondary text-white py-20 min-h-[50vh] flex items-center">
-        {/* Geometric Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-primary transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-accent-purple transform -rotate-12"></div>
-        </div>
-        
-        <div className="container-responsive relative z-10">
+      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[50vh] flex items-center">
+        <div className="section-container relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8">
-              <span className="text-white">LET'S</span><br />
-              <span className="text-primary">CONNECT</span>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-8">
+              <span className="text-brand-900">Let's</span><br />
+              <span className="text-brand-600">Connect</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
+            <p className="text-lg sm:text-xl text-brand-700 leading-relaxed">
               Ready to transform your business with AI automation? Let's discuss your needs.
             </p>
           </div>
@@ -63,18 +58,17 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 relative" style={{backgroundColor: '#2D1B69'}}>
-        <BackgroundShapes variant="light" intensity="low" />
-        <div className="container-responsive relative z-10">
+      <section className="section-padding bg-white">
+        <div className="section-container">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Contact Form */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                    SEND US A <span className="text-[#E93E8F]">MESSAGE</span>
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">
+                    Send us a <span className="text-brand-600">message</span>
                   </h2>
-                  <p className="text-lg text-gray-200">
+                  <p className="text-base text-brand-700">
                     Fill out the form below and we'll get back to you within 24 hours.
                   </p>
                 </div>
@@ -83,129 +77,163 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <input 
-                        className={`w-full rounded-xl border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
-                          errors.name ? 'border-red-500 focus:border-red-500' : 'border-pink-100 focus:border-primary'
+                        className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
+                          errors.name ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
                         }`}
                         placeholder="Your Name" 
                         {...register('name')} 
                       />
-                      {errors.name && <p className="mt-1 text-sm text-red-300">{errors.name.message}</p>}
+                      {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
                     </div>
                     <div>
                       <input 
-                        className={`w-full rounded-xl border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
-                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-pink-100 focus:border-primary'
+                        className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
+                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
                         }`}
                         placeholder="Email Address" 
                         type="email"
                         {...register('email')} 
                       />
-                      {errors.email && <p className="mt-1 text-sm text-red-300">{errors.email.message}</p>}
+                      {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
                     </div>
                   </div>
                   
                   <div>
                     <input 
-                      className={`w-full rounded-xl border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
-                        errors.company ? 'border-red-500 focus:border-red-500' : 'border-pink-100 focus:border-primary'
+                      className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
+                        errors.company ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
                       }`}
                       placeholder="Company Name" 
                       {...register('company')} 
                     />
-                    {errors.company && <p className="mt-1 text-sm text-red-300">{errors.company.message}</p>}
+                    {errors.company && <p className="mt-1 text-sm text-red-600">{errors.company.message}</p>}
                   </div>
                   
-                  <select className="w-full rounded-xl border-2 border-pink-100 bg-white px-4 py-3 focus:border-primary focus:outline-none transition-colors" {...register('channel')}>
-                    <option value="">Preferred communication channel (optional)</option>
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="telegram">Telegram</option>
-                  </select>
+                  <div>
+                    <label className="block text-sm font-medium text-brand-700 mb-2">Preferred communication channel (optional)</label>
+                    <div className="flex gap-4">
+                      <button
+                        type="button"
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-colors ${
+                          register('channel').value === 'whatsapp' 
+                            ? 'border-brand-600 bg-brand-50 text-brand-600' 
+                            : 'border-gray-300 text-gray-700 hover:border-brand-300'
+                        }`}
+                        onClick={() => register('channel').onChange({ target: { value: 'whatsapp' } })}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp
+                      </button>
+                      <button
+                        type="button"
+                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-colors ${
+                          register('channel').value === 'telegram' 
+                            ? 'border-brand-600 bg-brand-50 text-brand-600' 
+                            : 'border-gray-300 text-gray-700 hover:border-brand-300'
+                        }`}
+                        onClick={() => register('channel').onChange({ target: { value: 'telegram' } })}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        Telegram
+                      </button>
+                    </div>
+                  </div>
                   
                   <div>
                     <textarea 
-                      className={`w-full rounded-xl border-2 bg-white px-4 py-3 focus:outline-none transition-colors resize-none ${
-                        errors.message ? 'border-red-500 focus:border-red-500' : 'border-pink-100 focus:border-primary'
+                      className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors resize-none ${
+                        errors.message ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
                       }`}
                       rows={6} 
                       placeholder="Tell us about your business and how we can help..." 
                       {...register('message')} 
                     />
-                    {errors.message && <p className="mt-1 text-sm text-red-300">{errors.message.message}</p>}
+                    {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
                   </div>
                   
                   <input className="hidden" tabIndex={-1} autoComplete="off" {...register('honeypot')} />
                   
                   <button 
                     disabled={isSubmitting} 
-                    className="w-full px-8 py-4 bg-gradient-to-r from-primary to-accent-purple text-white font-bold text-lg rounded-xl hover:scale-105 transition-transform shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-8 py-4 bg-brand-600 text-white font-bold text-lg rounded-lg hover:bg-brand-700 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
+                  
+                  {/* Reassurance text */}
+                  <div className="bg-brand-50 rounded-lg p-4 border border-brand-100">
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-5 h-5 text-brand-600 mt-0.5" />
+                      <div className="text-sm text-brand-700">
+                        <p className="font-medium mb-1">We reply within 24h. Your info stays confidential and is never used to train AI.</p>
+                      </div>
+                    </div>
+                  </div>
                 </form>
               </div>
               
               {/* Contact Info & CTA */}
               <div className="space-y-8">
-                <div className="bg-gradient-to-br from-white to-gray-100 text-[#2D1B69] rounded-3xl p-8 shadow-xl border-2 border-[#E93E8F]">
-                  <h3 className="text-2xl font-bold text-[#E93E8F] mb-6">GET STARTED TODAY</h3>
-                  <p className="text-[#2D1B69] mb-8 font-medium">
+                <div className="bg-gradient-to-br from-brand-600 to-brand-500 text-white rounded-2xl p-8 shadow-lg">
+                  <h3 className="text-xl font-semibold mb-4">Get started today</h3>
+                  <p className="text-gray-200 mb-6">
                     Prefer to speak directly? Schedule a free consultation call with our AI automation experts.
                   </p>
                   <CalendlyModal 
                     label="Schedule FREE Call" 
-                    className="w-full px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-xl hover:scale-105 transition-transform shadow-lg" 
+                    className="w-full px-8 py-4 bg-white text-brand-600 font-bold text-lg rounded-lg hover:bg-gray-50 transition-colors shadow-lg" 
                   />
                 </div>
                 
                 <div className="space-y-6">
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-200">
-                    <h4 className="text-xl font-bold text-[#2D1B69] mb-4">Contact Information</h4>
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                    <h4 className="text-lg font-semibold text-brand-900 mb-4">Contact Information</h4>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#E93E8F] rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">@</span>
+                        <div className="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center">
+                          <Mail className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                          <div className="font-semibold text-[#2D1B69]">Email</div>
-                          <div className="text-gray-700">agentify.works@gmail.com</div>
+                          <div className="font-medium text-brand-900">Email</div>
+                          <a href="mailto:agentify.works@gmail.com" className="text-brand-600 hover:underline">agentify.works@gmail.com</a>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-200">
-                    <h4 className="text-xl font-bold text-[#2D1B69] mb-4">Follow Us</h4>
+                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                    <h4 className="text-lg font-semibold text-brand-900 mb-4">Follow Us</h4>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">IG</span>
+                          <span className="text-white font-bold text-sm">IG</span>
                         </div>
                         <div>
-                          <div className="font-semibold text-[#2D1B69]">Instagram</div>
-                          <a href="https://instagram.com/agent_ify" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#E93E8F] transition-colors">@agent_ify</a>
+                          <div className="font-medium text-brand-900">Instagram</div>
+                          <a href="https://instagram.com/agent_ify" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">@agent_ify</a>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">f</span>
+                          <span className="text-white font-bold text-sm">f</span>
                         </div>
                         <div>
-                          <div className="font-semibold text-[#2D1B69]">Facebook</div>
-                          <a href="https://facebook.com/agentify" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#E93E8F] transition-colors">Agentify</a>
+                          <div className="font-medium text-brand-900">Facebook</div>
+                          <a href="https://facebook.com/agentify" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">Agentify</a>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="bg-white border-2 border-[#E93E8F] rounded-2xl p-6 shadow-lg">
-                    <h4 className="text-xl font-bold text-[#2D1B69] mb-4">Response Time</h4>
+                  <div className="bg-brand-50 border border-brand-200 rounded-lg p-6">
+                    <h4 className="text-lg font-semibold text-brand-900 mb-4">Response Time</h4>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#E93E8F] rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold">→</span>
+                      <div className="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center">
+                        <Clock className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="font-semibold text-[#2D1B69]">Within 24 Hours</div>
-                        <div className="text-gray-700">We respond to all inquiries promptly</div>
+                        <div className="font-medium text-brand-900">Within 24 Hours</div>
+                        <div className="text-brand-700">We respond to all inquiries promptly</div>
                       </div>
                     </div>
                   </div>
@@ -215,6 +243,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      
+      <LogosStrip />
     </>
   )
 }
