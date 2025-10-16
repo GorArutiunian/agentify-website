@@ -4,7 +4,7 @@ import { TrustBadge } from '@/components/trust-badge'
 
 export function FinalCTA() {
   return (
-    <section className="section-padding bg-gradient-to-br from-brand-600 to-brand-500 text-white">
+    <section className="section-padding bg-gradient-brand text-white">
       <div className="section-container">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-4">

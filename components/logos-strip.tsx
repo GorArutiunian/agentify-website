@@ -8,7 +8,18 @@ export function LogosStrip() {
     { name: 'Slack', src: '/logos/slack.svg' },
     { name: 'Google Sheets', src: '/logos/googlesheets.svg' },
     { name: 'Zapier', src: '/logos/zapier.svg' },
-    { name: 'Zendesk', src: '/logos/zendesk.svg' }
+    { name: 'Zendesk', src: '/logos/zendesk.svg' },
+    { name: 'Notion', src: '/logos/notion.svg' },
+    { name: 'Airtable', src: '/logos/airtable.svg' },
+    { name: 'Gmail', src: '/logos/gmail.svg' },
+    { name: 'Asana', src: '/logos/asana.svg' },
+    { name: 'Monday', src: '/logos/monday.svg' },
+    { name: 'Stripe', src: '/logos/stripe.svg' },
+    { name: 'Twilio', src: '/logos/twilio.svg' },
+    { name: 'Shopify', src: '/logos/shopify.svg' },
+    { name: 'Intercom', src: '/logos/intercom.svg' },
+    { name: 'ClickUp', src: '/logos/clickup.svg' },
+    { name: 'Make', src: '/logos/make.svg' }
   ]
 
   return (
@@ -24,12 +35,12 @@ export function LogosStrip() {
           {logos.map((logo) => (
             <div
               key={logo.name}
-              className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity duration-300 hover:scale-110"
             >
               <img
                 src={logo.src}
                 alt={`${logo.name} logo`}
-                className="h-8 w-auto filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="h-9 w-auto transition-all duration-300"
                 aria-hidden="true"
                 role="presentation"
               />

@@ -5,13 +5,7 @@ import { Clock, TrendingUp, Users } from 'lucide-react'
 
 export function HeroV2() {
   return (
-    <section 
-      className="relative min-h-screen text-brand-900 overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(1000px 600px at 20% 0%, var(--brand-100) 0%, rgba(255,255,255,0) 60%), radial-gradient(800px 500px at 90% 10%, var(--brand-50) 0%, rgba(255,255,255,0) 55%)"
-      }}
-    >
+    <section className="relative min-h-screen bg-gradient-brand text-white overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-32 h-32 bg-white transform rotate-45 rounded-lg"></div>
@@ -25,20 +19,20 @@ export function HeroV2() {
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Eyebrow */}
-            <div className="inline-flex items-center px-4 py-2 bg-brand-100 rounded-full border border-brand-600/20">
-              <span className="text-sm font-medium text-brand-600">AI Agents for SMBs</span>
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
+              <span className="text-sm font-medium text-white">AI Agents for SMBs</span>
             </div>
             
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
               Automate your busywork.<br />
-              <span className="text-brand-600">
+              <span className="text-white">
                 Grow faster.
               </span>
             </h1>
             
             {/* Supporting text */}
-            <p className="text-lg sm:text-xl text-brand-700 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl">
               We deploy ready-made AI agents for sales, support and ops—so you reply in minutes, cut costs, and never miss a lead.
             </p>
             
@@ -46,7 +40,7 @@ export function HeroV2() {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <CalendlyModal 
                 label="Book a 15-min consult" 
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-brand-600 text-white font-bold text-base sm:text-lg rounded-full hover:bg-brand-700 hover:scale-105 transition-all shadow-lg w-full sm:w-auto text-center"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-brand-600 font-bold text-base sm:text-lg rounded-full hover:bg-gray-50 hover:scale-105 transition-all shadow-lg w-full sm:w-auto text-center"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.plausible) {
                     window.plausible('BookConsult_Click', { props: { location: 'hero' } })
@@ -55,7 +49,7 @@ export function HeroV2() {
               />
               <Link 
                 href="/agents" 
-                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-brand-600 text-brand-600 font-bold text-base sm:text-lg rounded-full hover:bg-brand-50 hover:border-brand-700 transition-all w-full sm:w-auto text-center"
+                className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white font-bold text-base sm:text-lg rounded-full hover:bg-white/10 hover:border-white/50 transition-all w-full sm:w-auto text-center"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.plausible) {
                     window.plausible('ViewAllAgents_Click', { props: { location: 'hero' } })
@@ -69,32 +63,32 @@ export function HeroV2() {
             {/* Proof Points */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-brand-600" />
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-brand-900">&lt;2 min avg response</div>
-                  <div className="text-sm text-brand-700">Lightning fast</div>
+                  <div className="font-semibold text-white">&lt;2 min avg response</div>
+                  <div className="text-sm text-white/80">Lightning fast</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-brand-600" />
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <TrendingUp className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-brand-900">30–50% fewer no-shows</div>
-                  <div className="text-sm text-brand-700">Better attendance</div>
+                  <div className="font-semibold text-white">30–50% fewer no-shows</div>
+                  <div className="text-sm text-white/80">Better attendance</div>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center">
-                  <Users className="w-5 h-5 text-brand-600" />
+                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <Users className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-brand-900">Up to 40% more qualified leads</div>
-                  <div className="text-sm text-brand-700">Better quality</div>
+                  <div className="font-semibold text-white">Up to 40% more qualified leads</div>
+                  <div className="text-sm text-white/80">Better quality</div>
                 </div>
               </div>
             </div>

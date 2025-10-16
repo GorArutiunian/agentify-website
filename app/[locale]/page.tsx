@@ -6,6 +6,8 @@ import { LogosStrip } from '@/components/logos-strip'
 import { HowItWorks } from '@/components/how-it-works'
 import { SocialProofCompact } from '@/components/social-proof-compact'
 import { FinalCTA } from '@/components/final-cta'
+import { IndustryScroll } from '@/components/industry-scroll'
+import { TestimonialsExpanded } from '@/components/testimonials-expanded'
 import { agents as allAgents } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 
@@ -61,18 +63,18 @@ export default function HomePage() {
                   }
                 }}
               >
-                <AgentCard 
-                  title={agent.name} 
-                  slug={agent.slug} 
-                  summary={agent.blurb}
-                  category={agent.category}
-                  subtitle={agent.subtitle}
-                  industry={agent.industry}
-                  tier={agent.tier}
-                  metrics={agent.metrics}
-                  disclaimer={agent.disclaimer}
-                  isHot={agent.isHot}
-                />
+              <AgentCard 
+                title={agent.name} 
+                slug={agent.slug} 
+                summary={agent.blurb}
+                category={agent.category}
+                subtitle={agent.subtitle}
+                industry={agent.industry}
+                tier={agent.tier}
+                metrics={agent.metrics}
+                disclaimer={agent.disclaimer}
+                isHot={agent.isHot}
+              />
               </div>
             ))}
           </div>
@@ -93,8 +95,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      <IndustryScroll />
       <HowItWorks />
-      <SocialProofCompact />
+      <TestimonialsExpanded />
       <FinalCTA />
     </>
   )
