@@ -2,6 +2,7 @@
 import { useTranslations } from 'next-intl'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { BackgroundShapes } from '@/components/background-shapes'
+import { Philosophy } from '@/components/philosophy'
 
 export default function AboutPage() {
   const t = useTranslations('about')
@@ -265,6 +266,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Philosophy Section */}
+      <Philosophy />
 
       {/* CTA Section */}
       <section className="py-20 relative" style={{backgroundColor: '#2D1B69'}}>
