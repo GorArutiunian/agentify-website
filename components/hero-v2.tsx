@@ -5,7 +5,13 @@ import { Clock, TrendingUp, Users } from 'lucide-react'
 
 export function HeroV2() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 overflow-hidden">
+    <section 
+      className="relative min-h-screen text-brand-900 overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(1000px 600px at 20% 0%, var(--brand-100) 0%, rgba(255,255,255,0) 60%), radial-gradient(800px 500px at 90% 10%, var(--brand-50) 0%, rgba(255,255,255,0) 55%)"
+      }}
+    >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-32 h-32 bg-white transform rotate-45 rounded-lg"></div>

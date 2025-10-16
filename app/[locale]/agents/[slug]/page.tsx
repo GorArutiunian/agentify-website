@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { TrustBadge } from '@/components/trust-badge'
 import { LogosStrip } from '@/components/logos-strip'
+import { TrustLine } from '@/components/trust-line'
 
 export default function AgentDetail({ params }: { params: { slug: string; locale: string } }) {
   const agent = agents.find((a: AgentDetail) => a.slug === params.slug)
@@ -315,6 +316,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
           </p>
         </div>
       </main>
+      <TrustLine />
       <LogosStrip />
     </div>
   )

@@ -4,6 +4,7 @@ import { agents as allAgents, industries } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 import { AgentFilter } from '@/components/agent-filter'
 import { LogosStrip } from '@/components/logos-strip'
+import { TrustLine } from '@/components/trust-line'
 
 export default function AgentsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState<string>('All')
@@ -116,7 +117,7 @@ export default function AgentsPage() {
                   setSelectedIndustry('All')
                   setSearchQuery('')
                 }}
-                className="px-6 py-3 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold rounded-full hover:from-[#2D1B69] hover:to-[#E93E8F] transition-all"
+                className="px-6 py-3 bg-brand-600 text-white font-bold rounded-full hover:bg-brand-700 transition-all"
               >
                 Clear Filters
               </button>
@@ -124,9 +125,9 @@ export default function AgentsPage() {
           )}
 
           {/* Footer Note */}
-          <div className="mt-6 text-center bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 border-2 border-[#E93E8F]/20">
-            <p className="text-sm text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              <strong className="text-[#2D1B69]">Why 30% below market?</strong> Agentify prices are 30% below comparable 
+          <div className="mt-6 text-center bg-brand-50 rounded-lg p-6 border border-brand-200">
+            <p className="text-sm text-brand-700 max-w-3xl mx-auto leading-relaxed">
+              <strong className="text-brand-800">Why 30% below market?</strong> Agentify prices are 30% below comparable 
               U.S. market rates for SMB automation because we specialize in n8n-based workflows and managed integrations 
               for mid-size offices. Exact quotes depend on your specific integrations, data volume, and support needs. 
               All solutions include hosting, monitoring, and regular updates.
@@ -135,6 +136,7 @@ export default function AgentsPage() {
         </div>
       </section>
       
+      <TrustLine />
       <LogosStrip />
     </>
   )

@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { LogosStrip } from '@/components/logos-strip'
+import { TrustLine } from '@/components/trust-line'
 import { MessageCircle, Mail, Clock, Shield } from 'lucide-react'
 
 const schema = z.object({
@@ -244,6 +245,7 @@ export default function ContactPage() {
         </div>
       </section>
       
+      <TrustLine />
       <LogosStrip />
     </>
   )

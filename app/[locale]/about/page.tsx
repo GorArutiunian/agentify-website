@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { TrustBadge } from '@/components/trust-badge'
 import { LogosStrip } from '@/components/logos-strip'
+import { TrustLine } from '@/components/trust-line'
 import { Zap, Target, TrendingUp, Users, ArrowRight, CheckCircle } from 'lucide-react'
 
 export default function AboutPage() {
@@ -224,6 +225,7 @@ export default function AboutPage() {
         </div>
       </section>
       
+      <TrustLine />
       <LogosStrip />
     </>
   )
