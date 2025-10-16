@@ -46,15 +46,6 @@ export function BottomToolbar() {
               />
             </div>
 
-            <Link
-              href={`/${locale}/pricing`}
-              className={`flex flex-col items-center gap-1 text-xs ${
-                isActive(`/${locale}/pricing`) ? 'text-[#2D1B69] font-semibold' : 'text-gray-600'
-              }`}
-            >
-              <CreditCard className="w-5 h-5" />
-              <span>Pricing</span>
-            </Link>
 
             <Link
               href={`/${locale}/contact`}

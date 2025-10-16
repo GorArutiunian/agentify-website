@@ -130,7 +130,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
         </div>
 
         {/* Implementation Steps */}
-        {agent.steps && agent.steps.length > 0 && (
+        {agent.steps && Array.isArray(agent.steps) && agent.steps.length > 0 && (
           <div className="mb-12 bg-white rounded-2xl p-8 shadow-xl border-2 border-[#E93E8F]">
             <h2 className="text-2xl font-bold text-[#2D1B69] mb-6">Implementation Steps</h2>
             <ol className="space-y-4">
@@ -147,7 +147,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
         )}
 
         {/* FAQ */}
-        {agent.faq && agent.faq.length > 0 && (
+        {agent.faq && Array.isArray(agent.faq) && agent.faq.length > 0 && (
           <div className="mb-12 bg-white rounded-2xl p-8 shadow-xl border-2 border-[#E93E8F]">
             <h2 className="text-2xl font-bold text-[#2D1B69] mb-6">Frequently Asked Questions</h2>
             <div className="space-y-6">
@@ -262,6 +262,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
 export async function generateStaticParams() {
   return agents.map((agent: AgentDetail) => ({
     slug: agent.slug,
+    locale: 'en', // Add locale parameter
   }))
 }
 

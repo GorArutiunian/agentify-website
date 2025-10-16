@@ -37,6 +37,8 @@ const nextConfig = {
               "font-src 'self' data:;",
               // Network calls (adjust api domain if needed)
               "connect-src 'self' https://*.vercel.app https://api.agentify.ai https://plausible.io;",
+              // Frames - allow Calendly iframes
+              "frame-src 'self' https://calendly.com;",
               // Media
               "media-src 'self' blob: data:;",
               // Objects disabled
