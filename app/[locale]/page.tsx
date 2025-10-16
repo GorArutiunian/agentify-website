@@ -26,7 +26,7 @@ export default function HomePage() {
           <div className="absolute bottom-40 left-40 w-24 h-24 bg-primary transform rotate-45"></div>
         </div>
         
-        <div className="container-responsive py-20 relative z-10">
+        <div className="container-responsive py-20 relative z-10 overflow-hidden">
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
             {/* Left Side - Content */}
             <div className="space-y-8">
@@ -63,53 +63,53 @@ export default function HomePage() {
             
             {/* Right Side - AI Automation Visualization */}
             <div className="relative">
-              {/* Central AI Brain - Made Bigger */}
-              <div className="relative mx-auto w-96 h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem]">
+              {/* Central AI Brain - Mobile Optimized */}
+              <div className="relative mx-auto w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem]">
                 {/* Main AI Core */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent-purple rounded-full flex items-center justify-center animate-pulse border-4 border-white/20 shadow-2xl">
-                  <div className="text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold text-white drop-shadow-lg">AI</div>
+                  <div className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold text-white drop-shadow-lg">AI</div>
                 </div>
                 
-                {/* Orbiting Elements - Made Bigger */}
-                <div className="absolute -top-12 md:-top-16 left-1/2 transform -translate-x-1/2">
-                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center shadow-xl float-slow">
-                    <Star className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" />
+                {/* Orbiting Elements - MUCH BIGGER */}
+                <div className="absolute -top-16 md:-top-20 left-1/2 transform -translate-x-1/2">
+                  <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 flex items-center justify-center shadow-xl float-slow">
+                    <Star className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
                   </div>
                 </div>
                 
-                <div className="absolute -right-12 md:-right-16 lg:-right-20 top-1/2 transform -translate-y-1/2">
-                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center shadow-xl pulse-soft">
-                    <Gauge className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" />
+                <div className="absolute -right-16 md:-right-24 lg:-right-28 top-1/2 transform -translate-y-1/2">
+                  <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 flex items-center justify-center shadow-xl pulse-soft">
+                    <Gauge className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-12 md:-bottom-16 left-1/2 transform -translate-x-1/2">
-                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center shadow-xl float-slow" style={{animationDelay: '0.8s'}}>
-                    <ArrowUp className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" />
+                <div className="absolute -bottom-16 md:-bottom-20 left-1/2 transform -translate-x-1/2">
+                  <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 flex items-center justify-center shadow-xl float-slow" style={{animationDelay: '0.8s'}}>
+                    <ArrowUp className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
                   </div>
                 </div>
                 
-                <div className="absolute -left-12 md:-left-16 lg:-left-20 top-1/2 transform -translate-y-1/2">
-                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-white/15 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center shadow-xl pulse-soft" style={{animationDelay: '0.4s'}}>
-                    <Check className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" />
+                <div className="absolute -left-16 md:-left-24 lg:-left-28 top-1/2 transform -translate-y-1/2">
+                  <div className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/40 flex items-center justify-center shadow-xl pulse-soft" style={{animationDelay: '0.4s'}}>
+                    <Check className="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
                   </div>
                 </div>
               </div>
               
-              {/* Floating Stats - MUCH BIGGER */}
-              <div className="absolute -top-8 -right-8 md:-top-12 md:-right-16 bg-white/15 backdrop-blur-sm rounded-3xl p-8 md:p-10 border-2 border-white/30 min-w-[140px] md:min-w-[180px] shadow-2xl">
-                <div className="text-primary font-bold text-4xl md:text-6xl lg:text-7xl">24/7</div>
-                <div className="text-white text-lg md:text-xl lg:text-2xl font-medium">Always Working</div>
+              {/* Floating Stats - Smaller and Beautiful */}
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 md:-top-8 md:-right-12 bg-white/15 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/30 min-w-[80px] sm:min-w-[90px] md:min-w-[120px] shadow-lg">
+                <div className="text-primary font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl">24/7</div>
+                <div className="text-white text-xs sm:text-sm md:text-base font-medium">Always Working</div>
               </div>
               
-              <div className="absolute -bottom-8 -left-8 md:-bottom-12 md:-left-16 bg-white/15 backdrop-blur-sm rounded-3xl p-8 md:p-10 border-2 border-white/30 min-w-[140px] md:min-w-[180px] shadow-2xl">
-                <div className="text-accent-purple font-bold text-4xl md:text-6xl lg:text-7xl">99.9%</div>
-                <div className="text-white text-lg md:text-xl lg:text-2xl font-medium">Accuracy</div>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 md:-bottom-8 md:-left-12 bg-white/15 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/30 min-w-[80px] sm:min-w-[90px] md:min-w-[120px] shadow-lg">
+                <div className="text-accent-purple font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl">99.9%</div>
+                <div className="text-white text-xs sm:text-sm md:text-base font-medium">Accuracy</div>
               </div>
               
-              <div className="absolute top-1/2 -right-28 md:-right-40 lg:-right-48 transform -translate-y-1/2 bg-white/15 backdrop-blur-sm rounded-3xl p-8 md:p-10 border-2 border-white/30 min-w-[140px] md:min-w-[180px] shadow-2xl">
-                <div className="text-accent-pink font-bold text-4xl md:text-6xl lg:text-7xl">0</div>
-                <div className="text-white text-lg md:text-xl lg:text-2xl font-medium">Downtime</div>
+              <div className="absolute top-1/2 -right-8 sm:-right-12 md:-right-24 lg:-right-32 transform -translate-y-1/2 bg-white/15 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-white/30 min-w-[80px] sm:min-w-[90px] md:min-w-[120px] shadow-lg">
+                <div className="text-accent-pink font-bold text-lg sm:text-xl md:text-3xl lg:text-4xl">0</div>
+                <div className="text-white text-xs sm:text-sm md:text-base font-medium">Downtime</div>
               </div>
             </div>
           </div>

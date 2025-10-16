@@ -70,7 +70,10 @@ export function Navbar() {
         <div className="container-responsive flex h-16 md:h-14 items-center justify-between">
           <Link href={`/${locale}`} className={`flex items-center gap-3 font-bold text-2xl md:text-3xl transition-all duration-300 ${textColor} hover:scale-105 hover:text-[#2D1B69]`}>
             <img src="/agentify-logo.png" alt="Agentify Logo" className="w-8 h-8 md:w-10 md:h-10" />
-            Agentify
+            <div className="flex items-center gap-2">
+              <span>Agentify</span>
+              <span className="text-sm md:text-base font-normal text-[#E93E8F]">bots</span>
+            </div>
           </Link>
           
           {/* Desktop Navigation */}
