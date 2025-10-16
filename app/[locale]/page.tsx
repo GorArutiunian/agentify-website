@@ -96,20 +96,20 @@ export default function HomePage() {
                 </div>
               </div>
               
-              {/* Floating Stats */}
-              <div className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-                <div className="text-primary font-bold text-2xl">24/7</div>
-                <div className="text-white text-sm">Always Working</div>
+              {/* Floating Stats - Made Bigger */}
+              <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 min-w-[120px]">
+                <div className="text-primary font-bold text-3xl md:text-4xl">24/7</div>
+                <div className="text-white text-base md:text-lg">Always Working</div>
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-                <div className="text-accent-purple font-bold text-2xl">99.9%</div>
-                <div className="text-white text-sm">Accuracy</div>
+              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 min-w-[120px]">
+                <div className="text-accent-purple font-bold text-3xl md:text-4xl">99.9%</div>
+                <div className="text-white text-base md:text-lg">Accuracy</div>
               </div>
               
-              <div className="absolute top-1/2 -right-20 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
-                <div className="text-accent-pink font-bold text-2xl">0</div>
-                <div className="text-white text-sm">Downtime</div>
+              <div className="absolute top-1/2 -right-24 md:-right-32 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 min-w-[120px]">
+                <div className="text-accent-pink font-bold text-3xl md:text-4xl">0</div>
+                <div className="text-white text-base md:text-lg">Downtime</div>
               </div>
             </div>
           </div>

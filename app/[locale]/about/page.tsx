@@ -190,28 +190,14 @@ export default function AboutPage() {
                 description: "Full-stack developer and AI integration specialist"
               }
             ].map((member, index) => (
-              <div key={index} className={`text-center group ${index === 1 ? 'relative -mt-8' : ''}`}>
-                <div className={`${index === 1 ? 'w-40 h-40' : 'w-32 h-32'} rounded-full mx-auto mb-6 overflow-hidden group-hover:scale-110 transition-transform border-4 border-[#E93E8F]`}>
-                  <img 
-                    src={`/images/team/${index === 0 ? 'ashot' : index === 1 ? 'gor' : 'arsen'}.jpg`} 
-                    alt={member.name}
-                    className="w-full h-full object-cover object-center"
-                    onError={(e) => {
-                      // Fallback to initials if image fails to load
-                      e.currentTarget.style.display = 'none'
-                      const nextElement = e.currentTarget.nextElementSibling as HTMLElement
-                      if (nextElement) {
-                        nextElement.style.display = 'flex'
-                      }
-                    }}
-                  />
-                  <div className="w-full h-full bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] flex items-center justify-center" style={{display: 'none'}}>
-                    <span className="text-white font-bold text-2xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
-                  </div>
+              <div key={index} className="text-center group">
+                {/* Beautiful gradient circle with initials instead of images */}
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] flex items-center justify-center group-hover:scale-110 transition-transform border-4 border-white/20 shadow-xl">
+                  <span className="text-white font-bold text-xl md:text-2xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-[#E93E8F] font-bold text-sm mb-3">{member.role}</p>
-                <p className="text-gray-300 text-sm">{member.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{member.name}</h3>
+                <p className="text-[#E93E8F] font-bold text-xs md:text-sm mb-3">{member.role}</p>
+                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{member.description}</p>
               </div>
             ))}
           </div>
