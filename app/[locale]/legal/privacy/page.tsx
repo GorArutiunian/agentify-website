@@ -1,59 +1,56 @@
+import { LogosStrip } from '@/components/logos-strip'
+
 export const metadata = { title: "Privacy Policy | Agentify" };
 
 export default function Page() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12"></div>
-        </div>
-        
-        <div className="container-responsive relative z-10">
+      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[60vh] flex items-center">
+        <div className="section-container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              <span className="text-white">Privacy</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Policy</span>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              <span className="text-brand-900">Privacy</span><br />
+              <span className="text-brand-600">Policy</span>
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg lg:text-xl text-brand-700 leading-relaxed">
               Your privacy is important to us. This policy explains how we collect, use, and protect your information.
             </p>
-            <div className="mt-6 text-sm text-gray-400">
-              Last updated: {new Date().toISOString().slice(0,10)}
+            <div className="mt-6 text-sm text-brand-600 font-medium">
+              Last updated: December 2024
             </div>
           </div>
         </div>
       </section>
 
       {/* Content Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
-        <div className="container-responsive">
+      <section className="section-padding bg-white">
+        <div className="section-container">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+            <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 border border-gray-200">
               <div className="prose prose-lg max-w-none">
                 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-bold text-[#2D1B69] mb-4">Who we are</h2>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h2 className="text-2xl font-semibold text-brand-900 mb-4">Who we are</h2>
+                  <p className="text-brand-700 leading-relaxed">
                     Agentify ("we", "us") provides AI agents and automation services. This policy explains how we handle personal data when you use our services.
                   </p>
                 </div>
 
                 <div className="mb-12">
-                  <h2 className="text-2xl font-bold text-[#2D1B69] mb-4">What we collect</h2>
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <ul className="space-y-3 text-gray-700">
+                  <h2 className="text-2xl font-semibold text-brand-900 mb-4">What we collect</h2>
+                  <div className="bg-brand-50 rounded-lg p-6">
+                    <ul className="space-y-3 text-brand-700">
                       <li className="flex items-start">
-                        <div className="w-2 h-2 bg-[#E93E8F] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-brand-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <span><strong>Website usage data:</strong> Pages viewed, device information, and basic analytics</span>
                       </li>
                       <li className="flex items-start">
-                        <div className="w-2 h-2 bg-[#E93E8F] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-brand-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <span><strong>Contact information:</strong> Name, email, company details you provide</span>
                       </li>
                       <li className="flex items-start">
-                        <div className="w-2 h-2 bg-[#E93E8F] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-brand-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <span><strong>Service data:</strong> Operational data for agents (only what you choose to provide)</span>
                       </li>
                     </ul>
@@ -180,8 +177,8 @@ export default function Page() {
                 </div>
 
                 <div className="border-t pt-8">
-                  <h2 className="text-2xl font-bold text-[#2D1B69] mb-4">Contact Information</h2>
-                  <div className="bg-gradient-to-r from-[#2D1B69] to-[#E93E8F] rounded-lg p-6 text-white">
+                  <h2 className="text-2xl font-semibold text-brand-900 mb-4">Contact Information</h2>
+                  <div className="bg-gradient-to-r from-brand-600 to-brand-500 rounded-lg p-6 text-white">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h3 className="font-semibold mb-2">Privacy Officer</h3>
@@ -199,6 +196,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <LogosStrip />
     </>
   );
 }
