@@ -1,254 +1,235 @@
-"use client"
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { useTranslations } from 'next-intl'
 import { CalendlyModal } from '@/components/calendly-modal'
-import LogosStripBottom from '@/components/logos-strip'
-import { TrustLine } from '@/components/trust-line'
-import { MessageCircle, Mail, Clock, Shield } from 'lucide-react'
 
-const schema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  company: z.string().min(2, 'Company name must be at least 2 characters'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-  channel: z.enum(['whatsapp','telegram']).optional(),
-  honeypot: z.string().max(0).optional()
-})
-
-type FormValues = z.infer<typeof schema>
+export const metadata = {
+  title: "Contact Us | Agentify",
+  description: "Get in touch with Agentify. Schedule a free consultation to discuss how AI automation can transform your business."
+};
 
 export default function ContactPage() {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset, watch } = useForm<FormValues>({ resolver: zodResolver(schema) })
-  
-  const channelValue = watch('channel')
-
-  const onSubmit = async (data: FormValues) => {
-    try {
-      const res = await fetch('/api/contact', { 
-        method: 'POST', 
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data) 
-      })
-      
-      if (res.ok) {
-        reset()
-        alert('Thank you! We will reach out to you within 24 hours.')
-      } else {
-        const error = await res.json()
-        alert('Something went wrong. Please try again or contact us directly at hello@agentify.com')
-      }
-    } catch (error) {
-      alert('Network error. Please check your connection and try again.')
-    }
-  }
+  const t = useTranslations('contact')
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[50vh] flex items-center">
-        <div className="section-container relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-8">
-              <span className="text-brand-900">Let's</span><br />
-              <span className="text-brand-600">Connect</span>
+      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
+        {/* Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-[#E93E8F]/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-[#FF6B9D]/15 transform rotate-45"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-[#2D1B69]/20 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 right-20 w-28 h-28 bg-[#E93E8F]/10 transform -rotate-12"></div>
+        </div>
+        
+        <div className="container-responsive relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+              <span className="text-white">Get in</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Touch</span>
             </h1>
-            <p className="text-lg sm:text-xl text-brand-700 leading-relaxed">
-              Ready to transform your business with AI automation? Let's discuss your needs.
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Ready to transform your business with AI automation? Let's discuss how we can help you save time, reduce costs, and scale faster.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="section-padding bg-agentify-section">
-        <div className="section-container">
+      {/* Contact Methods Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-12">
+              
               {/* Contact Form */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">
-                    Send us a <span className="text-brand-600">message</span>
-                  </h2>
-                  <p className="text-base text-brand-700">
-                    Fill out the form below and we'll get back to you within 24 hours.
-                  </p>
-                </div>
+              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+                <h2 className="text-3xl font-bold text-[#2D1B69] mb-6">Send us a Message</h2>
+                <p className="text-gray-600 mb-8">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
                 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <input 
-                        className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
-                          errors.name ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
-                        }`}
-                        placeholder="Your Name" 
-                        {...register('name')} 
+                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E93E8F] focus:border-transparent"
+                        placeholder="John"
                       />
-                      {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
                     </div>
                     <div>
-                      <input 
-                        className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
-                          errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
-                        }`}
-                        placeholder="Email Address" 
-                        type="email"
-                        {...register('email')} 
+                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E93E8F] focus:border-transparent"
+                        placeholder="Doe"
                       />
-                      {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
                     </div>
                   </div>
                   
                   <div>
-                    <input 
-                      className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${
-                        errors.company ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
-                      }`}
-                      placeholder="Company Name" 
-                      {...register('company')} 
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E93E8F] focus:border-transparent"
+                      placeholder="john@company.com"
                     />
-                    {errors.company && <p className="mt-1 text-sm text-red-600">{errors.company.message}</p>}
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-brand-700 mb-2">Preferred communication channel (optional)</label>
-                    <div className="flex gap-4">
-                      <button
-                        type="button"
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-colors ${
-                          channelValue === 'whatsapp' 
-                            ? 'border-brand-600 bg-brand-50 text-brand-600' 
-                            : 'border-gray-300 text-gray-700 hover:border-brand-300'
-                        }`}
-                        onClick={() => register('channel').onChange({ target: { value: 'whatsapp' } })}
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        WhatsApp
-                      </button>
-                      <button
-                        type="button"
-                        className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-colors ${
-                          channelValue === 'telegram' 
-                            ? 'border-brand-600 bg-brand-50 text-brand-600' 
-                            : 'border-gray-300 text-gray-700 hover:border-brand-300'
-                        }`}
-                        onClick={() => register('channel').onChange({ target: { value: 'telegram' } })}
-                      >
-                        <MessageCircle className="w-4 h-4" />
-                        Telegram
-                      </button>
-                    </div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E93E8F] focus:border-transparent"
+                      placeholder="Your Company"
+                    />
                   </div>
                   
                   <div>
-                    <textarea 
-                      className={`w-full rounded-lg border-2 bg-white px-4 py-3 focus:outline-none transition-colors resize-none ${
-                        errors.message ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-brand-600'
-                      }`}
-                      rows={6} 
-                      placeholder="Tell us about your business and how we can help..." 
-                      {...register('message')} 
-                    />
-                    {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>}
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#E93E8F] focus:border-transparent"
+                      placeholder="Tell us about your automation needs..."
+                    ></textarea>
                   </div>
                   
-                  <input className="hidden" tabIndex={-1} autoComplete="off" {...register('honeypot')} />
-                  
-                  <button 
-                    disabled={isSubmitting} 
-                    className="w-full px-8 py-4 bg-brand-600 text-white font-bold text-lg rounded-lg hover:bg-brand-700 transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  <button
+                    type="submit"
+                    className="w-full px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-lg hover:scale-105 transition-transform shadow-lg"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    Send Message
                   </button>
-                  
-                  {/* Reassurance text */}
-                  <div className="bg-brand-50 rounded-lg p-4 border border-brand-100">
-                    <div className="flex items-start gap-3">
-                      <Shield className="w-5 h-5 text-brand-600 mt-0.5" />
-                      <div className="text-sm text-brand-700">
-                        <p className="font-medium mb-1">We reply within 24h. Your info stays confidential and is never used to train AI.</p>
-                      </div>
-                    </div>
-                  </div>
                 </form>
               </div>
               
-              {/* Contact Info & CTA */}
+              {/* Contact Information */}
               <div className="space-y-8">
-                <div className="bg-gradient-to-br from-brand-600 to-brand-500 text-white rounded-2xl p-8 shadow-lg">
-                  <h3 className="text-xl font-semibold mb-4">Get started today</h3>
-                  <p className="text-gray-200 mb-6">
-                    Prefer to speak directly? Schedule a free consultation call with our AI automation experts.
-                  </p>
-                  <CalendlyModal 
-                    label="Schedule FREE Call" 
-                    className="w-full px-8 py-4 bg-white text-brand-600 font-bold text-lg rounded-lg hover:bg-gray-50 transition-colors shadow-lg" 
-                  />
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                    <h4 className="text-lg font-semibold text-brand-900 mb-4">Contact Information</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center">
-                          <Mail className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <div className="font-medium text-brand-900">Email</div>
-                          <a href="mailto:agentify.works@gmail.com" className="text-brand-600 hover:underline">agentify.works@gmail.com</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+                  <h2 className="text-3xl font-bold text-[#2D1B69] mb-6">Contact Information</h2>
                   
-                  <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                    <h4 className="text-lg font-semibold text-brand-900 mb-4">Follow Us</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">IG</span>
-                        </div>
-                        <div>
-                          <div className="font-medium text-brand-900">Instagram</div>
-                          <a href="https://instagram.com/agent_ify" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">@agent_ify</a>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold text-sm">f</span>
-                        </div>
-                        <div>
-                          <div className="font-medium text-brand-900">Facebook</div>
-                          <a href="https://facebook.com/agentify" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">Agentify</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-brand-50 border border-brand-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-brand-900 mb-4">Response Time</h4>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center">
-                        <Clock className="w-5 h-5 text-white" />
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
                       </div>
                       <div>
-                        <div className="font-medium text-brand-900">Within 24 Hours</div>
-                        <div className="text-brand-700">We respond to all inquiries promptly</div>
+                        <h3 className="text-lg font-bold text-[#2D1B69] mb-2">Email</h3>
+                        <p className="text-gray-600">agentifyworks@gmail.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-[#2D1B69] mb-2">Response Time</h3>
+                        <p className="text-gray-600">Within 24 hours</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-[#2D1B69] mb-2">Location</h3>
+                        <p className="text-gray-600">Global Operations</p>
                       </div>
                     </div>
                   </div>
+                </div>
+                
+                {/* Quick Consultation CTA */}
+                <div className="bg-gradient-to-br from-[#2D1B69] to-[#3D2A7A] rounded-2xl shadow-xl p-8 md:p-12 text-white">
+                  <h3 className="text-2xl font-bold mb-4">Prefer a Quick Call?</h3>
+                  <p className="text-gray-300 mb-6">
+                    Schedule a 15-minute consultation to discuss your automation needs.
+                  </p>
+                  <CalendlyModal 
+                    label="Schedule Free Consultation"
+                    className="px-6 py-3 bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D] text-white font-bold rounded-lg hover:scale-105 transition-transform shadow-lg inline-flex items-center"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-        <TrustLine />
-        <LogosStripBottom />
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-secondary text-white">
+        <div className="container-responsive">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                Frequently Asked <span className="text-primary">Questions</span>
+              </h2>
+              <p className="text-xl text-gray-300">
+                Get answers to common questions about our AI automation services.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              {[
+                {
+                  question: "How quickly can you deploy AI agents?",
+                  answer: "Most AI agents can be deployed within 24-48 hours. We use pre-built templates and custom configurations to ensure rapid deployment while maintaining quality."
+                },
+                {
+                  question: "Do you provide ongoing support?",
+                  answer: "Yes, we provide 24/7 monitoring and support for all deployed AI agents. Our team ensures optimal performance and handles any issues that arise."
+                },
+                {
+                  question: "What types of businesses do you work with?",
+                  answer: "We work with businesses of all sizes, from startups to enterprises, across various industries including healthcare, real estate, e-commerce, and professional services."
+                },
+                {
+                  question: "How much does AI automation cost?",
+                  answer: "Pricing varies based on the complexity and number of AI agents needed. We offer flexible packages starting from $500/month. Contact us for a custom quote."
+                },
+                {
+                  question: "Is my data secure?",
+                  answer: "Absolutely. We use enterprise-grade security measures, including encryption, secure data handling, and compliance with industry standards to protect your data."
+                }
+              ].map((faq, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

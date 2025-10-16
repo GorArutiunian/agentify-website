@@ -1,236 +1,229 @@
-import { Shield, Lock, Database, Users, AlertTriangle, Mail, FileText, CheckCircle } from 'lucide-react'
-import { TrustBadge } from '@/components/trust-badge'
-import LogosStripBottom from '@/components/logos-strip'
+import { useTranslations } from 'next-intl'
 
-export const metadata = { title: "Trust Center | Agentify" };
+export const metadata = {
+  title: "Trust Center | Agentify",
+  description: "Agentify's Trust Center. Learn about our commitment to security, privacy, compliance, and reliability in our AI automation services."
+};
 
-export default function Page() {
+export default function TrustCenterPage() {
+  const t = useTranslations('trust')
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[60vh] flex items-center">
-        <div className="section-container relative z-10">
+      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
+        {/* Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-[#E93E8F]/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-[#FF6B9D]/15 transform rotate-45"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-[#2D1B69]/20 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 right-20 w-28 h-28 bg-[#E93E8F]/10 transform -rotate-12"></div>
+        </div>
+        
+        <div className="container-responsive relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-brand-900">Trust</span><br />
-              <span className="text-brand-600">Center</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+              <span className="text-white">Trust</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Center</span>
             </h1>
-            <p className="text-lg lg:text-xl text-brand-700 leading-relaxed">
-              Your trust is our foundation. Explore our security, privacy, and compliance commitments.
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Your trust is our foundation. Learn about our commitment to security, privacy, and reliability.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className="section-padding bg-white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-4">Legal & Security Resources</h2>
-            <p className="text-base sm:text-lg text-brand-700">Everything you need to know about our security and privacy practices</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <a href="/security" className="group">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-brand-600" />
+      {/* Trust Pillars Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#2D1B69] mb-6">
+                Our Trust <span className="text-primary">Pillars</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Four fundamental pillars that guide everything we do to earn and maintain your trust.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  ),
+                  title: "Security",
+                  description: "Enterprise-grade security with encryption, access controls, and continuous monitoring."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  title: "Privacy",
+                  description: "Your data is protected with strict privacy controls and transparent data handling practices."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  title: "Compliance",
+                  description: "Adherence to industry standards and regulations including GDPR, SOC 2, and more."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
+                  title: "Reliability",
+                  description: "99.9% uptime guarantee with redundant systems and 24/7 monitoring."
+                }
+              ].map((pillar, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center mx-auto mb-6">
+                    {pillar.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-4">{pillar.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
                 </div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-3 group-hover:text-brand-600 transition-colors">Security Overview</h3>
-                <p className="text-brand-700 text-sm mb-4">Learn about our security architecture, encryption, and access controls.</p>
-                <div className="text-brand-600 font-medium text-sm group-hover:underline">View Security →</div>
-              </div>
-            </a>
-
-            <a href="/legal/privacy" className="group">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="w-6 h-6 text-brand-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-3 group-hover:text-brand-600 transition-colors">Privacy Policy</h3>
-                <p className="text-brand-700 text-sm mb-4">Understand how we collect, use, and protect your personal data.</p>
-                <div className="text-brand-600 font-medium text-sm group-hover:underline">View Privacy →</div>
-              </div>
-            </a>
-
-            <a href="/legal/terms" className="group">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-brand-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-3 group-hover:text-brand-600 transition-colors">Terms of Service</h3>
-                <p className="text-brand-700 text-sm mb-4">Review our terms, acceptable use policy, and service commitments.</p>
-                <div className="text-brand-600 font-medium text-sm group-hover:underline">View Terms →</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Commitments */}
-      <section className="section-padding bg-brand-50">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-4">Our Trust Commitments</h2>
-            <p className="text-base sm:text-lg text-brand-700 max-w-3xl mx-auto">
-              We're committed to maintaining the highest standards of security, privacy, and transparency
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Lock className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-3">Encryption in Transit</h3>
-              <p className="text-brand-700 text-sm">All data is encrypted using HTTPS/TLS 1.3 during transmission</p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Database className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-3">Server-Side Storage</h3>
-              <p className="text-brand-700 text-sm">Secrets and API keys stored server-side only, never in browsers</p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <AlertTriangle className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-3">No Model Training</h3>
-              <p className="text-brand-700 text-sm">Your data is never used to train AI models by default</p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-3">Client Isolation</h3>
-              <p className="text-brand-700 text-sm">Per-client data isolation with separate credentials and scopes</p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-3">Data Minimization</h3>
-              <p className="text-brand-700 text-sm">We collect only what's necessary to provide our services</p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-3">Deletion on Request</h3>
-              <p className="text-brand-700 text-sm">Your data is deleted immediately upon request</p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Deployment Options */}
-      <section className="section-padding bg-white">
-        <div className="section-container">
+      {/* Security Metrics Section */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container-responsive">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                Security <span className="text-primary">Metrics</span>
+              </h2>
+              <p className="text-xl text-gray-300">
+                Real-time security metrics that demonstrate our commitment to protecting your data.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  number: "99.9%",
+                  label: "Uptime SLA",
+                  description: "Guaranteed service availability"
+                },
+                {
+                  number: "< 15min",
+                  label: "Response Time",
+                  description: "Average incident response"
+                },
+                {
+                  number: "256-bit",
+                  label: "Encryption",
+                  description: "AES encryption standard"
+                },
+                {
+                  number: "24/7",
+                  label: "Monitoring",
+                  description: "Continuous security monitoring"
+                }
+              ].map((metric, index) => (
+                <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
+                  <div className="text-4xl font-bold text-[#E93E8F] mb-2">{metric.number}</div>
+                  <div className="text-xl font-bold text-white mb-2">{metric.label}</div>
+                  <div className="text-gray-300 text-sm">{metric.description}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-4">Flexible Deployment Options</h2>
-              <p className="text-base sm:text-lg text-brand-700">
-                Choose the deployment model that best fits your compliance and security requirements
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                  <Database className="w-6 h-6 text-brand-600" />
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-[#2D1B69] mb-6">
+                  Compliance & <span className="text-primary">Certifications</span>
+                </h2>
+                <p className="text-lg text-gray-600">
+                  We maintain the highest standards of compliance and security certifications.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-4">Security Standards</h3>
+                  <ul className="space-y-4">
+                    {[
+                      "SOC 2 Type II Compliance",
+                      "ISO 27001 Information Security",
+                      "GDPR Data Protection",
+                      "HIPAA Healthcare Compliance",
+                      "PCI DSS Payment Security"
+                    ].map((standard, index) => (
+                      <li key={index} className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-[#E93E8F] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-gray-700">{standard}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-4">Hosted by Agentify</h3>
-                <p className="text-brand-700 text-sm mb-4">
-                  We manage everything for you with enterprise-grade security and compliance.
-                </p>
-                <ul className="space-y-2 text-brand-700 text-sm">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Managed infrastructure and security</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Automatic updates and maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>24/7 monitoring and support</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-                <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-brand-600" />
+                
+                <div className="space-y-6">
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-4">Data Protection</h3>
+                  <ul className="space-y-4">
+                    {[
+                      "End-to-end encryption",
+                      "Secure data centers",
+                      "Regular security audits",
+                      "Data breach prevention",
+                      "Privacy by design"
+                    ].map((protection, index) => (
+                      <li key={index} className="flex items-center space-x-3">
+                        <svg className="w-5 h-5 text-[#E93E8F] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-gray-700">{protection}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-4">Your Cloud Environment</h3>
-                <p className="text-brand-700 text-sm mb-4">
-                  Deploy within your own cloud infrastructure for maximum control and compliance.
-                </p>
-                <ul className="space-y-2 text-brand-700 text-sm">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Data never leaves your environment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>AWS, GCP, or Azure deployment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Complete control over security policies</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Badge */}
-      <section className="section-padding bg-brand-50">
-        <div className="section-container">
-          <div className="max-w-md mx-auto">
-            <TrustBadge />
+      {/* Contact Section */}
+      <section className="py-16 bg-secondary text-white">
+        <div className="container-responsive">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">
+              Questions About Our <span className="text-primary">Trust</span> Practices?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Our security and compliance team is available to answer any questions about our trust practices and security measures.
+            </p>
+            <a
+              href="mailto:agentifyworks@gmail.com"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-full hover:scale-105 transition-transform shadow-lg"
+            >
+              Contact Trust Team
+            </a>
           </div>
         </div>
       </section>
-
-      {/* Contact */}
-      <section className="section-padding bg-white">
-        <div className="section-container">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-brand-600 to-brand-500 rounded-lg p-8 text-white">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-2xl font-semibold mb-4">Questions About Trust & Security?</h2>
-              <p className="text-lg text-gray-200 mb-6">
-                We're here to answer any questions about our security practices and compliance.
-              </p>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:agentifyworks@gmail.com" 
-                  className="inline-block bg-white text-brand-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-                >
-                  agentifyworks@gmail.com
-                </a>
-                <p className="text-gray-300 text-sm">
-                  Our team responds within 24 hours
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-        <LogosStripBottom />
     </>
-  );
+  )
 }

@@ -1,58 +1,80 @@
-"use client"
 import { useTranslations } from 'next-intl'
 import { CalendlyModal } from '@/components/calendly-modal'
-import { TrustBadge } from '@/components/trust-badge'
-import LogosStripBottom from '@/components/logos-strip'
-import { TrustLine } from '@/components/trust-line'
-import { Zap, Target, TrendingUp, Users, ArrowRight, CheckCircle } from 'lucide-react'
+
+export const metadata = {
+  title: "About Us | Agentify",
+  description: "Learn about Agentify's mission to revolutionize business operations with AI automation. Meet our team of experts."
+};
 
 export default function AboutPage() {
   const t = useTranslations('about')
-  
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-agentify-section text-white section-padding min-h-[60vh] flex items-center">
-        <div className="section-container relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-8">
+      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
+        {/* Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-[#E93E8F]/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-[#FF6B9D]/15 transform rotate-45"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-[#2D1B69]/20 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 right-20 w-28 h-28 bg-[#E93E8F]/10 transform -rotate-12"></div>
+        </div>
+        
+        <div className="container-responsive relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               <span className="text-white">About</span><br />
-              <span className="bg-gradient-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Agentify</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Agentify</span>
             </h1>
-            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-              We're on a mission to revolutionize business operations through intelligent AI automation.
+            <p className="text-xl text-gray-300 leading-relaxed">
+              We're revolutionizing how businesses operate by deploying intelligent AI agents that handle your most time-consuming tasks automatically.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section className="section-padding bg-agentify-section">
-        <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900">
-                Our <span className="text-brand-600">Story</span>
-              </h2>
-              <div className="space-y-6 text-base text-brand-700">
-                <p>
-                  Founded with a vision to democratize AI automation, Agentify was born from the belief that every business, regardless of size, deserves access to cutting-edge artificial intelligence solutions.
-                </p>
-                <p>
-                  Our journey began when we recognized the massive inefficiencies in business operations worldwide. Companies were spending countless hours on repetitive tasks, losing revenue to human error, and struggling to scale their operations effectively.
-                </p>
-                <p>
-                  We set out to change this by creating intelligent AI agents that could handle these tasks with precision, speed, and reliability that humans simply cannot match.
+      {/* Mission Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl lg:text-4xl font-bold text-[#2D1B69] mb-6">Our Mission</h2>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  To empower businesses with AI automation that actually works. We believe every company deserves access to enterprise-grade AI agents that can handle customer inquiries, process orders, and manage workflows 24/7.
                 </p>
               </div>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-gradient-to-br from-brand-600 to-brand-500 rounded-3xl p-8 text-white">
-                <div className="space-y-6">
-                  <div className="text-6xl font-bold">70+</div>
-                  <div className="text-xl">Businesses Transformed</div>
-                  <div className="text-sm opacity-80">And counting...</div>
+              
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-3">Speed</h3>
+                  <p className="text-gray-600">Deploy AI agents in 24 hours, not months. Get results immediately.</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-3">Reliability</h3>
+                  <p className="text-gray-600">99.9% uptime with enterprise-grade security and monitoring.</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-3">ROI</h3>
+                  <p className="text-gray-600">Proven results: 30-50% fewer no-shows, up to 40% more qualified leads.</p>
                 </div>
               </div>
             </div>
@@ -60,90 +82,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Philosophy Section */}
-      <section className="section-padding bg-brand-50">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-12">
-              Our <span className="text-brand-600">Philosophy</span>
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white border border-brand-100 rounded-2xl p-8 shadow-sm">
-                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-brand-900 mb-4">Speed</h3>
-                <p className="text-brand-700">We believe in lightning-fast implementation and immediate results. Time is money, and we help you save both.</p>
-              </div>
-              
-              <div className="bg-white border border-brand-100 rounded-2xl p-8 shadow-sm">
-                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-brand-900 mb-4">Precision</h3>
-                <p className="text-brand-700">Every AI agent is meticulously crafted to deliver exact results, eliminating errors and maximizing efficiency.</p>
-              </div>
-              
-              <div className="bg-white border border-brand-100 rounded-2xl p-8 shadow-sm">
-                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-brand-900 mb-4">Scale</h3>
-                <p className="text-brand-700">Our solutions grow with your business, handling increased workload without breaking a sweat.</p>
-              </div>
-            </div>
-            
-            <div className="bg-white text-brand-900 rounded-2xl p-8 border border-brand-100">
-              <h3 className="text-xl font-semibold mb-4">Mastery Demands Focus</h3>
-              <p className="text-brand-700 leading-relaxed mb-4">
-                We don't offer web design, SEO, social media management, or any other services. We do one thing and we do it exceptionally well: AI automation.
-              </p>
-              <p className="text-brand-700 leading-relaxed">
-                This laser focus allows us to stay at the forefront of AI technology and deliver results that generalist agencies simply cannot match.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team Section */}
-      <section className="section-padding bg-agentify-section">
-        <div className="section-container">
+      {/* Team Section */}
+      <section className="py-20 bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white">
+        <div className="container-responsive">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">
-              Meet the <span className="text-brand-600">Team</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Team</span>
             </h2>
-            <p className="text-base sm:text-lg text-brand-700 max-w-3xl mx-auto">
-              Founded by AI experts who have spent years perfecting the art of intelligent automation. With our company culture, caliber of clientele, and deep technical expertise, we've attracted the best talent globally.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our team of AI experts and business automation specialists are dedicated to transforming how you work.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
             {[
               {
-                name: "Ashot Zargaryan",
-                role: "Head of Operations",
+                name: "Ashot Hambardzumyan",
+                role: "CHIEF OPERATING OFFICER",
                 description: "Client relations and business development specialist"
               },
               {
                 name: "Gor Arutiunian",
-                role: "Founder & CEO",
+                role: "FOUNDER & CEO",
                 description: "AI automation expert specializing in business process optimization"
               },
               {
                 name: "Arsen Hambardzumyan",
-                role: "Lead Developer",
+                role: "LEAD DEVELOPER",
                 description: "Full-stack developer and AI integration specialist"
               }
             ].map((member, index) => (
               <div key={index} className="text-center group">
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-brand-600 to-brand-500 flex items-center justify-center group-hover:scale-110 transition-transform border-4 border-brand-100 shadow-lg">
+                {/* Beautiful gradient circle with initials instead of images */}
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] flex items-center justify-center group-hover:scale-110 transition-transform border-4 border-white/20 shadow-xl">
                   <span className="text-white font-bold text-xl md:text-2xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold text-brand-900 mb-2">{member.name}</h3>
-                <p className="text-brand-600 font-medium text-sm mb-3">{member.role}</p>
-                <p className="text-brand-700 text-sm leading-relaxed">{member.description}</p>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{member.name}</h3>
+                <p className="text-[#E93E8F] font-bold text-xs md:text-sm mb-3">{member.role}</p>
+                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{member.description}</p>
               </div>
             ))}
           </div>
@@ -151,49 +127,55 @@ export default function AboutPage() {
       </section>
 
       {/* Our Process Section */}
-      <section className="section-padding bg-brand-50">
-        <div className="section-container">
+      <section className="bg-secondary text-white py-20 relative overflow-hidden">
+        {/* Decorative Background Shapes */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-10 w-24 h-24 bg-[#E93E8F]/10 transform rotate-45"></div>
+          <div className="absolute top-20 right-20 w-32 h-32 bg-primary/15 rounded-full"></div>
+          <div className="absolute bottom-20 left-1/4 w-20 h-20 bg-accent-purple/10 transform -rotate-12"></div>
+          <div className="absolute bottom-40 right-1/3 w-28 h-28 bg-[#E93E8F]/8 rounded-full blur-lg"></div>
+          <div className="absolute top-1/2 left-10 w-16 h-16 bg-primary/20 transform rotate-45"></div>
+        </div>
+        
+        <div className="container-responsive relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">Our Process</h2>
-            <p className="text-base sm:text-lg text-brand-700">How we transform your business operations</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              How We <span className="text-primary">Work</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our proven process ensures your AI agents are deployed quickly and deliver immediate results.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8 relative">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               {
                 step: "01",
                 title: "Discovery",
-                description: "We analyze your current processes and identify automation opportunities"
+                description: "We analyze your current processes and identify automation opportunities."
               },
               {
                 step: "02", 
                 title: "Design",
-                description: "Custom AI agents are designed specifically for your business needs"
+                description: "Custom AI agents are designed to fit your specific business needs."
               },
               {
                 step: "03",
-                title: "Implement",
-                description: "Seamless integration with your existing systems and workflows"
+                title: "Deploy",
+                description: "Your AI agents are deployed and integrated with your existing systems."
               },
               {
                 step: "04",
                 title: "Optimize",
-                description: "Continuous monitoring and optimization for maximum performance"
+                description: "Continuous monitoring and optimization to maximize your ROI."
               }
-            ].map((phase, index) => (
-              <div key={index} className="text-center relative">
-                {/* Arrow connecting to next step - hidden on mobile */}
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-10 -right-4 z-0">
-                    <ArrowRight className="w-6 h-6 text-brand-300" />
-                  </div>
-                )}
-                
-                <div className="w-20 h-20 bg-brand-600 rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg">
-                  <span className="text-white font-bold text-2xl">{phase.step}</span>
+            ].map((item, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent-purple rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-white font-bold text-2xl">{item.step}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-brand-900 mb-4">{phase.title}</h3>
-                <p className="text-brand-700">{phase.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -201,32 +183,24 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-brand-600 to-brand-500 text-white">
-        <div className="section-container text-center">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
-            Ready to start your AI journey?
-          </h2>
-          
-          <p className="text-lg text-gray-200 mb-12 max-w-3xl mx-auto">
-            If you're ready to revolutionize your business operations with AI automation, it would be our honor to find out. Schedule your FREE discovery call below.
-          </p>
-          
-          <CalendlyModal 
-            label="Speak To Our Team Today" 
-            className="px-6 sm:px-8 md:px-12 py-4 sm:py-5 md:py-6 bg-white text-brand-600 font-bold text-lg sm:text-xl md:text-2xl rounded-full hover:bg-gray-50 hover:scale-105 transition-all shadow-2xl w-full sm:w-auto max-w-md mx-auto" 
-          />
-          <p className="text-gray-300 mt-4 text-center">
-            Schedule Your FREE Audit Call Now
-          </p>
-          
-          <div className="mt-8 max-w-md mx-auto">
-            <TrustBadge />
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#2D1B69] mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Join hundreds of businesses already using AI automation to save time, reduce costs, and scale faster.
+              </p>
+              <CalendlyModal 
+                label="Schedule Your FREE Consultation"
+                className="px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-full hover:scale-105 transition-transform shadow-lg inline-flex items-center"
+              />
+            </div>
           </div>
         </div>
       </section>
-      
-        <TrustLine />
-        <LogosStripBottom />
     </>
   )
 }

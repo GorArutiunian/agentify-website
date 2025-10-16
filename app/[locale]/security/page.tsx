@@ -1,267 +1,220 @@
-import { Shield, Lock, Database, Users, AlertTriangle, Mail } from 'lucide-react'
-import { TrustBadge } from '@/components/trust-badge'
-import LogosStripBottom from '@/components/logos-strip'
+import { useTranslations } from 'next-intl'
 
-export const metadata = { title: "Security | Agentify" };
+export const metadata = {
+  title: "Security | Agentify",
+  description: "Learn about Agentify's security measures, data protection, and compliance standards to keep your business data safe."
+};
 
-export default function Page() {
+export default function SecurityPage() {
+  const t = useTranslations('security')
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[60vh] flex items-center">
-        <div className="section-container relative z-10">
+      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
+        {/* Background Shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-[#E93E8F]/10 rounded-full blur-xl"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-[#FF6B9D]/15 transform rotate-45"></div>
+          <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-[#2D1B69]/20 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-40 right-20 w-28 h-28 bg-[#E93E8F]/10 transform -rotate-12"></div>
+        </div>
+        
+        <div className="container-responsive relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-brand-900">Security</span><br />
-              <span className="text-brand-600">First</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+              <span className="text-white">Security &</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Compliance</span>
             </h1>
-            <p className="text-lg lg:text-xl text-brand-700 leading-relaxed">
-              We prioritize confidentiality, integrity, and availability of customer data with enterprise-grade security measures.
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Your data security is our top priority. Learn about our comprehensive security measures and compliance standards.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Security Architecture */}
-      <section className="section-padding bg-white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-4">Security Architecture</h2>
-            <p className="text-base sm:text-lg text-brand-700 max-w-3xl mx-auto">
-              Our multi-layered security approach ensures your data is protected at every level
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                <Lock className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-4">Encryption & Transport</h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">End-to-end encryption via HTTPS/TLS 1.3</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Secrets and API keys stored server-side only</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Never exposed in browser or client code</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                <Database className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-4">Data Isolation</h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Per-client isolation with separate credentials</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Dedicated data scopes and access controls</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Option to deploy in your own cloud environment</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Data Handling & Controls */}
-      <section className="section-padding bg-brand-50">
-        <div className="section-container">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                <Database className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-4">Data Handling</h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Operational logs: 30-90 days (configurable)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Deletion on request and contract end</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">No model training on client data by default</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Regular automated cleanup processes</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-4">Access Controls</h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Least privilege for systems and admins</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Multi-factor authentication required</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Audit trails for critical operations</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Role-based access controls (RBAC)</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-              <div className="w-12 h-12 bg-brand-100 rounded-lg flex items-center justify-center mb-4">
-                <AlertTriangle className="w-6 h-6 text-brand-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-brand-900 mb-4">Incident Response</h3>
-              <div className="space-y-3">
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Security contact: agentifyworks@gmail.com</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">72-hour notification for material incidents</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Automated threat detection and response</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 bg-brand-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-brand-700 text-sm">Regular security assessments</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trusted Providers */}
-      <section className="section-padding bg-white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-4">Trusted Infrastructure Partners</h2>
-            <p className="text-base sm:text-lg text-brand-700">
-              We work with industry-leading providers to ensure the highest security standards
-            </p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-4">Core Infrastructure</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-xs">V</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-brand-900">Vercel</h4>
-                      <p className="text-brand-700 text-sm">Hosting & Edge Computing</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-xs">CF</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-brand-900">Cloudflare</h4>
-                      <p className="text-brand-700 text-sm">CDN, WAF & DDoS Protection</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-semibold text-brand-900 mb-4">Service Providers</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-xs">R</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-brand-900">Resend</h4>
-                      <p className="text-brand-700 text-sm">Email Delivery Service</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
-                      <span className="text-white font-bold text-xs">AI</span>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-brand-900">OpenAI/Azure</h4>
-                      <p className="text-brand-700 text-sm">AI Model Providers</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Badge */}
-      <section className="section-padding bg-brand-50">
-        <div className="section-container">
-          <div className="max-w-md mx-auto">
-            <TrustBadge />
-          </div>
-        </div>
-      </section>
-
-      {/* Security Contact */}
-      <section className="section-padding bg-white">
-        <div className="section-container">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-brand-600 to-brand-500 rounded-lg p-8 text-white">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-2xl font-semibold mb-4">Security Contact</h2>
-              <p className="text-lg text-gray-200 mb-6">
-                Have a security concern or vulnerability to report?
+      {/* Security Features Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#2D1B69] mb-6">
+                Enterprise-Grade <span className="text-primary">Security</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We implement multiple layers of security to protect your data and ensure business continuity.
               </p>
-              <div className="space-y-4">
-                <a 
-                  href="mailto:agentifyworks@gmail.com" 
-                  className="inline-block bg-white text-brand-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-                >
-                  agentifyworks@gmail.com
-                </a>
-                <p className="text-gray-300 text-sm">
-                  We respond to all security reports within 24 hours
-                </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  ),
+                  title: "Data Encryption",
+                  description: "All data is encrypted in transit and at rest using industry-standard AES-256 encryption protocols."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  ),
+                  title: "Access Control",
+                  description: "Multi-factor authentication and role-based access controls ensure only authorized personnel can access your data."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  ),
+                  title: "24/7 Monitoring",
+                  description: "Continuous monitoring and real-time alerts ensure immediate detection and response to any security threats."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  ),
+                  title: "Secure Infrastructure",
+                  description: "Hosted on enterprise-grade cloud infrastructure with redundant systems and automatic failover capabilities."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  title: "Regular Backups",
+                  description: "Automated daily backups with point-in-time recovery ensure your data is always protected and recoverable."
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  title: "Compliance",
+                  description: "Compliant with industry standards including SOC 2, GDPR, and other relevant security frameworks."
+                }
+              ].map((feature, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-shadow">
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center mx-auto mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-[#2D1B69] mb-4 text-center">{feature.title}</h3>
+                  <p className="text-gray-600 text-center leading-relaxed">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance Section */}
+      <section className="py-20 bg-secondary text-white">
+        <div className="container-responsive">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                Security <span className="text-primary">Standards</span>
+              </h2>
+              <p className="text-xl text-gray-300">
+                We adhere to the highest security standards and compliance requirements.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-6">Data Protection</h3>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>GDPR compliant data handling</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Regular security audits and penetration testing</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Secure API endpoints with rate limiting</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Data retention policies and secure deletion</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-6">Business Continuity</h3>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>99.9% uptime SLA guarantee</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Disaster recovery and business continuity plans</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>Redundant systems and automatic failover</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 text-[#E93E8F] mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>24/7 monitoring and incident response</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-        <LogosStripBottom />
+      {/* Contact Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div className="container-responsive">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+              <h2 className="text-3xl font-bold text-[#2D1B69] mb-6">
+                Questions About Security?
+              </h2>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Our security team is available to discuss your specific security requirements and answer any questions you may have.
+              </p>
+              <a
+                href="mailto:agentifyworks@gmail.com"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-full hover:scale-105 transition-transform shadow-lg"
+              >
+                Contact Security Team
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
-  );
+  )
 }
