@@ -63,11 +63,11 @@ export default function HomePage() {
             
             {/* Right Side - AI Automation Visualization */}
             <div className="relative">
-              {/* Central AI Brain - Mobile Optimized */}
-              <div className="relative mx-auto w-80 h-80 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem]">
+              {/* Central AI Brain */}
+              <div className="relative mx-auto w-80 h-80">
                 {/* Main AI Core */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent-purple rounded-full flex items-center justify-center animate-pulse border-4 border-white/20 shadow-2xl">
-                  <div className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold text-white drop-shadow-lg">AI</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent-purple rounded-full flex items-center justify-center animate-pulse">
+                  <div className="text-6xl font-bold text-white">AI</div>
                 </div>
                 
                 {/* Orbiting Elements - MUCH BIGGER */}
