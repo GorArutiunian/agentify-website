@@ -1,0 +1,34 @@
+{
+  "title": "Shipping Daily Summary Agent",
+  "slug": "shipping-daily-summary",
+  "summary": "Aggregates shipments from Sheets/CSV, posts 10:00 and 18:00 summaries to Telegram with buttons.",
+  "outcomes": [
+    "Clear twice-daily dispatch view",
+    "Instant exception triage",
+    "Better SLA tracking"
+  ],
+  "integrations": ["n8n webhook", "Google Sheets", "Telegram", "Gmail"],
+  "features": ["Inline Acknowledge buttons", "CSV ingest"],
+  "kpis": ["on-time deliveries", "exceptions cleared", "SLA breaches"],
+  "setup_steps": [
+    "Share sample CSV/Sheets",
+    "Map fields and statuses",
+    "Configure summary windows",
+    "Enable Telegram bot",
+    "Run pilot week"
+  ],
+  "faq": [
+    {"q": "How fast can we launch?", "a": "Most agents are live in 3–7 days once we connect your tools."},
+    {"q": "Which messengers do you support?", "a": "Telegram out of the box; WhatsApp via Twilio; Viber/FB on request."},
+    {"q": "Do you replace my staff?", "a": "No. Agents remove repetitive work so your team can focus on value."},
+    {"q": "What about languages?", "a": "We support multiple languages including English, Spanish, French, and more."},
+    {"q": "Is my data safe?", "a": "We don’t store your customer data on our servers; we relay via secure APIs and can self-host on request."}
+  ],
+  "pricing_hint": "included in Pro",
+  "demo": {
+    "url": "https://example.com/demo-shipping",
+    "video": "https://example.com/video.mp4"
+  },
+  "images": ["/images/agents/shipping-1.png"]
+}
+

@@ -1,0 +1,34 @@
+{
+  "title": "Service Desk Auto-Responder",
+  "slug": "service-desk-autoresponder",
+  "summary": "Answers FAQs, escalates edge cases, cuts response time from hours to minutes.",
+  "outcomes": [
+    "Lower first-response time",
+    "Consistent answers",
+    "Fewer escalations"
+  ],
+  "integrations": ["Telegram", "Email", "Web forms"],
+  "features": ["FAQ matcher", "Escalation rules"],
+  "kpis": ["response time", "self-serve rate", "escalation volume"],
+  "setup_steps": [
+    "Import FAQ content",
+    "Define escalation criteria",
+    "Set schedules",
+    "Enable channels",
+    "Pilot and adjust"
+  ],
+  "faq": [
+    {"q": "How fast can we launch?", "a": "Most agents are live in 3–7 days once we connect your tools."},
+    {"q": "Which messengers do you support?", "a": "Telegram out of the box; WhatsApp via Twilio; Viber/FB on request."},
+    {"q": "Do you replace my staff?", "a": "No. Agents remove repetitive work so your team can focus on value."},
+    {"q": "What about languages?", "a": "We support multiple languages including English, Spanish, French, and more."},
+    {"q": "Is my data safe?", "a": "We don’t store your customer data on our servers; we relay via secure APIs and can self-host on request."}
+  ],
+  "pricing_hint": "included in Pro",
+  "demo": {
+    "url": "https://example.com/demo-service-desk",
+    "video": "https://example.com/video.mp4"
+  },
+  "images": ["/images/agents/service-1.png"]
+}
+

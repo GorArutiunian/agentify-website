@@ -1,0 +1,25 @@
+import { Pool, QueryResultRow } from 'pg'
+
+const connectionString = process.env.DATABASE_URL
+if (!connectionString) {
+  console.warn('DATABASE_URL not set; database calls will fail')
+}
+
+export const pool = new Pool({ connectionString, ssl: getSSL() })
+
+function getSSL() {
+  if (!process.env.DATABASE_SSL || process.env.DATABASE_SSL === 'false') return undefined
+  return { rejectUnauthorized: false } as any
+}
+
+export async function query<T extends QueryResultRow = any>(text: string, params?: any[]): Promise<{ rows: T[] }> {
+  const client = await pool.connect()
+  try {
+    const res = await client.query<T>(text, params)
+    return { rows: res.rows }
+  } finally {
+    client.release()
+  }
+}
+
+

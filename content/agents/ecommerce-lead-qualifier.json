@@ -1,0 +1,34 @@
+{
+  "title": "Lead Qualifier for E-commerce",
+  "slug": "ecommerce-lead-qualifier",
+  "summary": "Qualifies leads, books demos, pushes qualified leads to Google Sheets/CRM.",
+  "outcomes": [
+    "Better demo bookings",
+    "Cleaner lead pipeline",
+    "Faster replies"
+  ],
+  "integrations": ["Web chat widget", "Telegram", "Gmail", "Google Sheets"],
+  "features": ["Lead scoring", "Auto booking"],
+  "kpis": ["qualified leads", "demo bookings", "response time"],
+  "setup_steps": [
+    "Connect chat widget",
+    "Define qualification rules",
+    "Map CRM fields",
+    "Enable booking links",
+    "Monitor first week"
+  ],
+  "faq": [
+    {"q": "How fast can we launch?", "a": "Most agents are live in 3–7 days once we connect your tools."},
+    {"q": "Which messengers do you support?", "a": "Telegram out of the box; WhatsApp via Twilio; Viber/FB on request."},
+    {"q": "Do you replace my staff?", "a": "No. Agents remove repetitive work so your team can focus on value."},
+    {"q": "What about languages?", "a": "We support multiple languages including English, Spanish, French, and more."},
+    {"q": "Is my data safe?", "a": "We don’t store your customer data on our servers; we relay via secure APIs and can self-host on request."}
+  ],
+  "pricing_hint": "included in Pro",
+  "demo": {
+    "url": "https://example.com/demo-ecommerce",
+    "video": "https://example.com/video.mp4"
+  },
+  "images": ["/images/agents/ecom-1.png"]
+}
+

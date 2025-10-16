@@ -1,0 +1,49 @@
+{
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "price": 149,
+      "blurb": "Launch a single agent fast.",
+      "features": [
+        "1 agent",
+        "Email support",
+        "Basic workflows",
+        "Telegram OR WhatsApp",
+        "Monthly reports"
+      ],
+      "stripePriceId": "${STRIPE_PRICE_STARTER}"
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "price": 199,
+      "blurb": "Scale to multiple agents and channels.",
+      "features": [
+        "Up to 3 agents",
+        "Priority support",
+        "Telegram + WhatsApp",
+        "Google Sheets & Gmail integrations",
+        "Weekly reports"
+      ],
+      "stripePriceId": "${STRIPE_PRICE_GROWTH}"
+    },
+    {
+      "id": "business",
+      "name": "Business",
+      "price": 299,
+      "blurb": "Custom prompts, webhooks, and priority care.",
+      "features": [
+        "Up to 6 agents",
+        "Custom prompts",
+        "n8n webhooks",
+        "On-boarding call",
+        "Daily reports"
+      ],
+      "stripePriceId": "${STRIPE_PRICE_BUSINESS}"
+    }
+  ],
+  "setupFee": 199,
+  "setupFeePromo": true
+}
+

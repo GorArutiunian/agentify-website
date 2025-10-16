@@ -1,0 +1,39 @@
+{
+  "title": "Barbershop Booking Agent",
+  "slug": "barbershop-booker",
+  "summary": "Auto-handles appointment requests via Telegram/WhatsApp, sends reminders, reduces no-shows 25–40%.",
+  "outcomes": [
+    "Fewer no-shows with smart reminders",
+    "Faster replies to booking requests",
+    "Simple rebooking prompts"
+  ],
+  "integrations": ["Telegram Bot", "Google Calendar", "Google Sheets", "Twilio/WhatsApp", "Stripe (deposit)"] ,
+  "features": [
+    "Two-way messaging",
+    "Calendar sync",
+    "Deposit checkout",
+    "Multi-stylist routing"
+  ],
+  "kpis": ["bookings/week", "show-up rate", "rebooking rate"],
+  "setup_steps": [
+    "Connect Telegram bot and business number",
+    "Sync Google Calendar",
+    "Define booking rules and hours",
+    "Add reminder timings",
+    "Test end-to-end"
+  ],
+  "faq": [
+    {"q": "How fast can we launch?", "a": "Most agents are live in 3–7 days once we connect your tools."},
+    {"q": "Which messengers do you support?", "a": "Telegram out of the box; WhatsApp via Twilio; Viber/FB on request."},
+    {"q": "Do you replace my staff?", "a": "No. Agents remove repetitive work so your team can focus on value."},
+    {"q": "What about languages?", "a": "We support multiple languages including English, Spanish, French, and more."},
+    {"q": "Is my data safe?", "a": "We don’t store your customer data on our servers; we relay via secure APIs and can self-host on request."}
+  ],
+  "pricing_hint": "included in Pro",
+  "demo": {
+    "url": "https://example.com/demo-barbershop",
+    "video": "https://example.com/video.mp4"
+  },
+  "images": ["/images/agents/barbershop-1.png"]
+}
+
