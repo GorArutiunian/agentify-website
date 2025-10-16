@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 import { CalendlyModal } from '@/components/calendly-modal'
-import { Home, Bot, CreditCard, Phone, Calendar } from 'lucide-react'
+import { Home, Bot, CreditCard, Phone, Calendar, User } from 'lucide-react'
 
 export function BottomToolbar() {
   const locale = useLocale()
@@ -53,8 +53,18 @@ export function BottomToolbar() {
                 isActive(`/${locale}/about`) ? 'text-[#2D1B69] font-semibold' : 'text-gray-600'
               }`}
             >
-              <Phone className="w-5 h-5" />
+              <User className="w-5 h-5" />
               <span>About</span>
+            </Link>
+
+            <Link
+              href={`/${locale}/contact`}
+              className={`flex flex-col items-center gap-1 text-xs ${
+                isActive(`/${locale}/contact`) ? 'text-[#2D1B69] font-semibold' : 'text-gray-600'
+              }`}
+            >
+              <Phone className="w-5 h-5" />
+              <span>Contact</span>
             </Link>
           </div>
         </div>
