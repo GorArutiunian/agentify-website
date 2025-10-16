@@ -1,6 +1,6 @@
 import { Shield, Lock, Database, Users, AlertTriangle, Mail, FileText, CheckCircle } from 'lucide-react'
 import { TrustBadge } from '@/components/trust-badge'
-import { LogosStrip } from '@/components/logos-strip'
+import LogosStripBottom from '@/components/logos-strip'
 
 export const metadata = { title: "Trust Center | Agentify" };
 
@@ -230,7 +230,7 @@ export default function Page() {
         </div>
       </section>
 
-      <LogosStrip />
+        <LogosStripBottom />
     </>
   );
 }

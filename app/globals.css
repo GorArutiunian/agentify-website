@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 /* Page background utility */
-.page-bg {
-  background: var(--page-bg, #0F0A1E);
-  background-image: var(--page-bg-image, radial-gradient(1200px 800px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1200px 800px at 10% 120%, rgba(236,72,153,.20), transparent 60%));
+.page-bg { 
+  background:#0F0A1E; 
+  background-image: var(--page-bg-image, radial-gradient(1000px 700px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1000px 700px at 10% 120%, rgba(236,72,153,.22), transparent 60%)); 
+}
+.card-surface { 
+  background: rgba(255,255,255,.05); 
+  border:1px solid rgba(255,255,255,.12); 
 }
 
 :root {

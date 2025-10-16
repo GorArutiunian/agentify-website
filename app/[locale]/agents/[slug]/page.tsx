@@ -4,7 +4,7 @@ import { Bot, CheckCircle, Zap, TrendingUp, ArrowRight, Download, Shield, Server
 import Link from 'next/link'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { TrustBadge } from '@/components/trust-badge'
-import { LogosStrip } from '@/components/logos-strip'
+import LogosStripBottom from '@/components/logos-strip'
 import { TrustLine } from '@/components/trust-line'
 
 export default function AgentDetail({ params }: { params: { slug: string; locale: string } }) {
@@ -317,7 +317,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
         </div>
       </main>
       <TrustLine />
-      <LogosStrip />
+        <LogosStripBottom />
     </div>
   )
 }

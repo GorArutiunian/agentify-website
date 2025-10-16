@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { TrustBadge } from '@/components/trust-badge'
-import { LogosStrip } from '@/components/logos-strip'
+import LogosStripBottom from '@/components/logos-strip'
 import { TrustLine } from '@/components/trust-line'
 import { Zap, Target, TrendingUp, Users, ArrowRight, CheckCircle } from 'lucide-react'
 
@@ -12,14 +12,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[60vh] flex items-center">
+      <section className="relative bg-agentify-section text-white section-padding min-h-[60vh] flex items-center">
         <div className="section-container relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-4xl sm:text-5xl font-bold mb-8">
-              <span className="text-brand-900">About</span><br />
-              <span className="text-brand-600">Agentify</span>
+              <span className="text-white">About</span><br />
+              <span className="bg-gradient-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Agentify</span>
             </h1>
-            <p className="text-lg sm:text-xl text-brand-700 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
               We're on a mission to revolutionize business operations through intelligent AI automation.
             </p>
           </div>
@@ -27,7 +27,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-agentify-section">
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -108,7 +108,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Team Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-agentify-section">
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 mb-6">
@@ -225,8 +225,8 @@ export default function AboutPage() {
         </div>
       </section>
       
-      <TrustLine />
-      <LogosStrip />
+        <TrustLine />
+        <LogosStripBottom />
     </>
   )
 }

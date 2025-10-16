@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CalendlyModal } from '@/components/calendly-modal'
-import { LogosStrip } from '@/components/logos-strip'
+import LogosStripBottom from '@/components/logos-strip'
 import { TrustLine } from '@/components/trust-line'
 import { MessageCircle, Mail, Clock, Shield } from 'lucide-react'
 
@@ -61,7 +61,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-agentify-section">
         <div className="section-container">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -247,8 +247,8 @@ export default function ContactPage() {
         </div>
       </section>
       
-      <TrustLine />
-      <LogosStrip />
+        <TrustLine />
+        <LogosStripBottom />
     </>
   )
 }

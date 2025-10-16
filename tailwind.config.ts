@@ -13,20 +13,20 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          darkest: '#0F0A1E',   // page bg (near-black purple)
-          dark:    '#1B1135',   // section bg
-          purple:  '#6D28D9',   // violet-700
-          pink:    '#EC4899',   // pink-500
-          glow:    '#A855F7',   // violet-500
+          darkest: '#0F0A1E',
+          dark:    '#15102B',
+          purple:  '#6D28D9',
+          pink:    '#EC4899',
+          glow:    '#A855F7',
         }
       },
       backgroundImage: {
-        'agentify-radial': 'radial-gradient(1200px 800px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1200px 800px at 10% 120%, rgba(236,72,153,.20), transparent 60%)',
+        'agentify-radial': 'radial-gradient(1000px 700px at 85% -10%, rgba(168,85,247,.25), transparent 60%), radial-gradient(1000px 700px at 10% 120%, rgba(236,72,153,.22), transparent 60%)',
         'agentify-hero': 'linear-gradient(180deg, #160D2A 0%, #0F0A1E 100%)',
-        'agentify-card': 'linear-gradient(180deg, rgba(109,40,217,.35), rgba(236,72,153,.25))',
+        'agentify-section': 'linear-gradient(180deg, #15102B 0%, #0F0A1E 100%)',
       },
       boxShadow: {
-        'glow': '0 0 40px rgba(168,85,247,.35)',
+        glow: '0 0 40px rgba(168,85,247,.35)',
       },
       borderRadius: {
         lg: '12px',

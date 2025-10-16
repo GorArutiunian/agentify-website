@@ -1,4 +1,4 @@
-import { LogosStrip } from '@/components/logos-strip'
+import LogosStripBottom from '@/components/logos-strip'
 
 export const metadata = { title: "Privacy Policy | Agentify" };
 
@@ -6,17 +6,17 @@ export default function Page() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-50 via-white to-brand-100 text-brand-900 section-padding min-h-[60vh] flex items-center">
+      <section className="relative bg-agentify-section text-white section-padding min-h-[60vh] flex items-center">
         <div className="section-container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              <span className="text-brand-900">Privacy</span><br />
-              <span className="text-brand-600">Policy</span>
+              <span className="text-white">Privacy</span><br />
+              <span className="bg-gradient-to-r from-brand-pink to-brand-purple bg-clip-text text-transparent">Policy</span>
             </h1>
-            <p className="text-lg lg:text-xl text-brand-700 leading-relaxed">
+            <p className="text-lg lg:text-xl text-white/80 leading-relaxed">
               Your privacy is important to us. This policy explains how we collect, use, and protect your information.
             </p>
-            <div className="mt-6 text-sm text-brand-600 font-medium">
+            <div className="mt-6 text-sm text-brand-pink font-medium">
               Last updated: December 2024
             </div>
           </div>
@@ -24,7 +24,7 @@ export default function Page() {
       </section>
 
       {/* Content Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-agentify-section">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 border border-gray-200">
@@ -197,7 +197,7 @@ export default function Page() {
         </div>
       </section>
 
-      <LogosStrip />
+        <LogosStripBottom />
     </>
   );
 }

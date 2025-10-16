@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import HeroV2 from '@/components/hero-v2'
 import { IndustriesBar } from '@/components/industries-bar'
-import { LogosStrip } from '@/components/logos-strip'
+import LogosStripBottom from '@/components/logos-strip'
 import { HowItWorks } from '@/components/how-it-works'
 import { SocialProofCompact } from '@/components/social-proof-compact'
 import { FinalCTA } from '@/components/final-cta'
@@ -39,10 +39,9 @@ export default function HomePage() {
       />
       <HeroV2 />
       <IndustriesBar />
-      <LogosStrip />
       
       {/* Popular agents section - show top 6 only */}
-      <section className="section-padding bg-brand-dark/30">
+      <section className="section-padding bg-agentify-section">
         <div className="section-container">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
@@ -98,6 +97,7 @@ export default function HomePage() {
       <HowItWorks />
       <SocialProofCompact />
       <FinalCTA />
+      <LogosStripBottom />
     </>
   )
 }
