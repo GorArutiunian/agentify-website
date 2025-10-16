@@ -13,7 +13,7 @@ export function BottomToolbar() {
   const isActive = (href: string) => pathname === href
 
   return (
-    <div className="md:hidden fixed bottom-0 inset-x-0 z-50">
+    <div className="hidden md:flex fixed bottom-0 inset-x-0 z-50">
       <div className="mx-auto max-w-7xl px-4 pb-safe">
         <div className="relative">
           {/* Bar */}

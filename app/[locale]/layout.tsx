@@ -11,11 +11,13 @@ import CookieConsent from '@/components/cookie-consent'
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: 'Agentify — Ready-made AI Agents for Sales, Support & Ops',
     template: '%s — Agentify'
   },
-  description:
-    'Agentify builds practical AI agents for SMEs. Automate bookings, summaries, replies, and reports to save hours every week.'
+  description: 'Launch AI agents in days. Faster replies, fewer no-shows, more qualified leads. Book a 15-minute consult.',
+  alternates: {
+    canonical: 'https://www.agentifybots.com/'
+  }
 }
 
 export default async function LocaleLayout({
