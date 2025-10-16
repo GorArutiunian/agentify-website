@@ -19,7 +19,9 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>
 
 export default function ContactPage() {
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>({ resolver: zodResolver(schema) })
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset, watch } = useForm<FormValues>({ resolver: zodResolver(schema) })
+  
+  const channelValue = watch('channel')
 
   const onSubmit = async (data: FormValues) => {
     try {
@@ -116,7 +118,7 @@ export default function ContactPage() {
                       <button
                         type="button"
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-colors ${
-                          register('channel').value === 'whatsapp' 
+                          channelValue === 'whatsapp' 
                             ? 'border-brand-600 bg-brand-50 text-brand-600' 
                             : 'border-gray-300 text-gray-700 hover:border-brand-300'
                         }`}
@@ -128,7 +130,7 @@ export default function ContactPage() {
                       <button
                         type="button"
                         className={`flex items-center gap-2 px-4 py-2 rounded-lg border-2 transition-colors ${
-                          register('channel').value === 'telegram' 
+                          channelValue === 'telegram' 
                             ? 'border-brand-600 bg-brand-50 text-brand-600' 
                             : 'border-gray-300 text-gray-700 hover:border-brand-300'
                         }`}
