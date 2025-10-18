@@ -20,7 +20,7 @@ export function AgentFilter({
   totalResults
 }: Props) {
   return (
-    <div className="bg-[#2D1B69] py-7 mb-10">
+    <div className="bg-[#130724] py-7 mb-10">
       {/* Search Box */}
       <div className="max-w-md mx-auto mb-5">
         <div className="relative">
@@ -30,7 +30,7 @@ export function AgentFilter({
             placeholder="Search agents by name or description..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full pl-11 pr-5 py-2.5 rounded-full bg-white/10 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#E93E8F] transition-all placeholder-gray-400 text-base"
+            className="w-full pl-11 pr-5 py-2.5 rounded-full bg-white/15 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-[#E93E8F] transition-all placeholder-gray-400 text-base"
           />
         </div>
       </div>

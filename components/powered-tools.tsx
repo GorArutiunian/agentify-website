@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image'
 
 const tools = [
   { name: 'Zapier', src: '/logos/zapier.svg', url: 'https://zapier.com' },
@@ -26,47 +25,86 @@ const tools = [
 
 export function PoweredTools() {
   return (
-    <section className="py-16 bg-[#130724]">
+    <section className="py-16 bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
       <div className="container-responsive">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-sm text-gray-300 mb-12">
+          <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D] mb-12 mt-8">
             Powered by professional tools our agents integrate with
           </h2>
           
-          {/* Tools Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {tools.map((tool, index) => (
-              <a
-                key={tool.name}
-                href={tool.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/5 hover:bg-white/8 transition-all duration-300 ring-1 ring-white/10 rounded-xl p-4 flex items-center justify-center group"
-              >
-                <div className="relative w-16 h-16 flex items-center justify-center">
-                  <Image
-                    src={tool.src}
-                    alt={tool.name}
-                    width={64}
-                    height={64}
-                    className="max-h-16 w-auto object-contain group-hover:scale-110 transition-transform"
-                    onError={(e) => {
-                      const img = e.target as HTMLImageElement;
-                      img.style.display = 'none';
-                      const fallback = img.nextElementSibling as HTMLElement;
-                      if (fallback) {
-                        fallback.style.display = 'flex';
-                      }
-                    }}
-                  />
-                  <div
-                    className="w-16 h-16 rounded-lg bg-gradient-to-r from-brand-hotpink to-brand-magenta flex items-center justify-center text-white font-bold text-xs hidden"
-                  >
-                    {tool.name.charAt(0)}
+          {/* Tools Grid - EXACTLY 2 IDENTICAL ROWS */}
+          <div className="space-y-12">
+            {/* First Row - EXACTLY 10 tools */}
+            <div className="flex justify-center items-center gap-6">
+              {tools.slice(0, 10).map((tool, index) => (
+                <a
+                  key={tool.name}
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center group hover:scale-110 transition-all duration-300 w-20"
+                >
+                  <div className="w-14 h-14 flex items-center justify-center mb-3">
+                    <img
+                      src={tool.src}
+                      alt={tool.name}
+                      width={56}
+                      height={56}
+                      className="w-14 h-14 object-contain group-hover:scale-110 group-hover:brightness-120 transition-all duration-200 ease-in-out"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (nextElement) {
+                          nextElement.style.display = 'flex';
+                        }
+                      }}
+                    />
+                    <div className="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center text-white font-bold text-xs hidden">
+                      {tool.name.charAt(0)}
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
+                  <span className="text-xs text-white text-center leading-tight font-medium">
+                    {tool.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+            
+            {/* Second Row - EXACTLY 10 tools */}
+            <div className="flex justify-center items-center gap-6">
+              {tools.slice(10).map((tool, index) => (
+                <a
+                  key={tool.name}
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center group hover:scale-110 transition-all duration-300 w-20"
+                >
+                  <div className="w-14 h-14 flex items-center justify-center mb-3">
+                    <img
+                      src={tool.src}
+                      alt={tool.name}
+                      width={56}
+                      height={56}
+                      className="w-14 h-14 object-contain group-hover:scale-110 group-hover:brightness-120 transition-all duration-200 ease-in-out"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                        if (nextElement) {
+                          nextElement.style.display = 'flex';
+                        }
+                      }}
+                    />
+                    <div className="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center text-white font-bold text-xs hidden">
+                      {tool.name.charAt(0)}
+                    </div>
+                  </div>
+                  <span className="text-xs text-white text-center leading-tight font-medium">
+                    {tool.name}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

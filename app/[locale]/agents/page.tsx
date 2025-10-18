@@ -37,7 +37,7 @@ export default function AgentsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20 min-h-[50vh] flex items-center">
+      <section className="relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 min-h-[50vh] flex items-center">
         {/* Geometric Background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45 animate-pulse"></div>
@@ -63,16 +63,12 @@ export default function AgentsPage() {
       </section>
 
       {/* Agents Grid Section */}
-      <section className="py-16 relative" style={{
-        backgroundColor: '#2D1B69',
-        backgroundImage: `radial-gradient(circle, rgba(233, 62, 143, 0.1) 1px, transparent 1px)`,
-        backgroundSize: '20px 20px'
-      }}>
+      <section className="py-16 relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
         <div className="container-responsive relative z-10">
           {/* Section Intro */}
           <div className="text-center mb-12">
                     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                      {selectedIndustry === 'All' ? 'MOST POPULAR' : `${selectedIndustry}`} <span className="text-[#E93E8F]">AI AGENTS</span>
+                      {selectedIndustry === 'All' ? 'MOST POPULAR' : `${selectedIndustry}`} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">AI AGENTS</span>
                     </h2>
             <p className="text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed">
               {selectedIndustry === 'All' 

@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-  @apply bg-[#130724] text-text-high antialiased;
+  @apply bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-text-high antialiased;
 }
 
 .container-responsive {

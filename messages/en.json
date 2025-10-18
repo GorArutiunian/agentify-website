@@ -33,7 +33,19 @@
     "q5": "Can I customize the AI agents?",
     "a5": "Yes! We build custom AI agents tailored to your specific business needs. Whether you need unique workflows, special integrations, or specific functionality, we can create the perfect solution for you.",
     "q6": "What kind of support do you provide?",
-    "a6": "We provide ongoing support and maintenance for all our AI agents. This includes monitoring, updates, troubleshooting, and continuous optimization to ensure your agents perform at their best."
+    "a6": "We provide ongoing support and maintenance for all our AI agents. This includes monitoring, updates, troubleshooting, and continuous optimization to ensure your agents perform at their best.",
+    "q7": "How much do AI agents cost?",
+    "a7": "Our pricing is transparent and competitive, typically 30% below market rates. Costs vary based on complexity and integrations needed. We provide detailed quotes during our free consultation call.",
+    "q8": "Do I need technical knowledge to use AI agents?",
+    "a8": "Not at all! Our AI agents are designed to work seamlessly in the background. Once deployed, they operate autonomously without requiring any technical knowledge from your team.",
+    "q9": "Can AI agents work with my existing software?",
+    "a9": "Yes! Our agents integrate with over 20 popular business tools including CRM systems, email platforms, scheduling tools, and more. We can also create custom integrations for your specific needs.",
+    "q10": "What happens if something goes wrong?",
+    "a10": "Our team monitors all agents 24/7 and provides immediate support if any issues arise. We also offer comprehensive backup and recovery solutions to ensure business continuity.",
+    "q11": "How do I get started?",
+    "a11": "Getting started is easy! Simply schedule a free consultation call with our team. We'll analyze your needs, recommend the best AI agents for your business, and provide a detailed implementation plan.",
+    "q12": "Can I try before I buy?",
+    "a12": "Absolutely! We offer pilot programs where you can test our AI agents in a controlled environment before full deployment. This allows you to see the value firsthand with minimal risk."
   }
 }
 

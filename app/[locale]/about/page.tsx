@@ -10,18 +10,18 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-secondary text-white py-20 min-h-[60vh] flex items-center">
+      <section className="relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 min-h-[60vh] flex items-center">
         {/* Geometric Background */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-primary transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-accent-purple transform -rotate-12"></div>
+          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45"></div>
+          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12"></div>
         </div>
         
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8">
               <span className="text-white">ABOUT</span><br />
-              <span className="text-primary">AGENTIFY</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">AGENTIFY</span>
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed">
               We're on a mission to revolutionize business operations through intelligent AI automation.
@@ -31,7 +31,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#2D1B69'}}>
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
         <BackgroundShapes variant="light" intensity="low" />
         
         {/* Additional Decorative Shapes for Our Story */}
@@ -46,7 +46,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-                OUR <span className="text-white">STORY</span>
+                OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">STORY</span>
               </h2>
               <div className="space-y-6 text-lg text-white">
                 <p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Philosophy Section */}
-      <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#2D1B69'}}>
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
         {/* Background Shapes */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-32 h-32 bg-[#E93E8F]/10 rounded-full blur-xl"></div>
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Team Section */}
-      <section className="py-20 relative overflow-hidden" style={{backgroundColor: '#2D1B69'}}>
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
         <BackgroundShapes variant="light" intensity="low" />
         
         {/* Additional Decorative Shapes for Team Section */}
@@ -166,7 +166,7 @@ export default function AboutPage() {
         <div className="container-responsive relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              MEET THE <span className="text-white">A-TEAM</span>
+              MEET THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">A-TEAM</span>
             </h2>
             <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto">
               Founded by AI experts who have spent years perfecting the art of intelligent automation. With our elusive company culture, caliber of clientele, and deep technical expertise, we've attracted the best talent globally.
@@ -206,7 +206,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Process Section */}
-      <section className="bg-secondary text-white py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 relative overflow-hidden">
         {/* Decorative Background Shapes */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-24 h-24 bg-[#E93E8F]/10 transform rotate-45"></div>
@@ -219,7 +219,7 @@ export default function AboutPage() {
 
         <div className="container-responsive relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">OUR PROCESS</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D] mb-6">OUR PROCESS</h2>
             <p className="text-lg sm:text-xl text-gray-300">How we transform your business operations</p>
           </div>
           
@@ -256,8 +256,8 @@ export default function AboutPage() {
                   </div>
                 )}
                 
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-xl">
-                  <span className="text-white font-bold text-2xl">{phase.step}</span>
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-xl border-4 border-[#E93E8F]">
+                  <span className="text-[#E93E8F] font-bold text-2xl">{phase.step}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-4">{phase.title}</h3>
                 <p className="text-gray-300">{phase.description}</p>
@@ -271,7 +271,7 @@ export default function AboutPage() {
       <Philosophy />
 
       {/* CTA Section */}
-      <section className="py-20 relative" style={{backgroundColor: '#2D1B69'}}>
+      <section className="py-20 relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
         <BackgroundShapes variant="light" intensity="medium" />
         <div className="container-responsive text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-8">

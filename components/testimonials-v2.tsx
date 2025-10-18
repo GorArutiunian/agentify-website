@@ -22,6 +22,41 @@ const testimonials = [
     author: "Sarah Johnson",
     company: "Medical Practice",
     rating: 5
+  },
+  {
+    id: 4,
+    quote: "Agentify transformed our lead qualification process. We're closing 40% more deals with the same effort.",
+    author: "David Rodriguez",
+    company: "Real Estate Agency",
+    rating: 5
+  },
+  {
+    id: 5,
+    quote: "The automation handles our inventory management perfectly. No more stockouts or overstocking.",
+    author: "Lisa Wang",
+    company: "Retail Chain",
+    rating: 5
+  },
+  {
+    id: 6,
+    quote: "Our customer support is now 24/7 without hiring additional staff. Response time under 2 minutes.",
+    author: "Robert Taylor",
+    company: "SaaS Company",
+    rating: 5
+  },
+  {
+    id: 7,
+    quote: "The AI agent manages our social media scheduling and engagement. Our reach increased by 300%.",
+    author: "Amanda Foster",
+    company: "Marketing Agency",
+    rating: 5
+  },
+  {
+    id: 8,
+    quote: "Perfect for our accounting firm. Invoice processing and follow-ups are completely automated.",
+    author: "James Wilson",
+    company: "Accounting Firm",
+    rating: 5
   }
 ]
 
