@@ -28,8 +28,8 @@ export function HeroV3() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Content */}
           <div className="space-y-8">
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-text-high">
-              AI agents for smart businesses.
+            <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-text-high mb-6 leading-tight">
+              <span className="text-white">AI agents for</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">smart businesses.</span>
             </h1>
             
             <p className="text-xl text-gray-200 leading-relaxed">
@@ -50,7 +50,7 @@ export function HeroV3() {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
               <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
                 <div className="text-2xl font-bold text-text-high">≤ 2 min</div>
                 <div className="text-gray-300 text-sm">avg response</div>
@@ -61,7 +61,7 @@ export function HeroV3() {
               </div>
               <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
                 <div className="text-2xl font-bold text-text-high">Up to 40%</div>
-                <div className="text-gray-300 text-sm">more qualified leads</div>
+                <div className="text-gray-300 text-sm">more lead</div>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export function HeroV3() {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
               {/* Phone Frame */}
-              <div className="w-80 h-[500px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
+              <div className="w-64 sm:w-72 md:w-80 h-[400px] sm:h-[450px] md:h-[500px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
                 <div className="w-full h-full bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-6 flex flex-col">
                   {/* Phone Header */}
                   <div className="flex items-center justify-between mb-6">

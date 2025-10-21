@@ -4,6 +4,8 @@ import { agents as allAgents, industries } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
 import { AgentFilter } from '@/components/agent-filter'
 import { BackgroundShapes } from '@/components/background-shapes'
+import LogoShapesBg from '@/components/logo-shapes-bg'
+import Headline from '@/components/headline'
 
 export default function AgentsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState<string>('All')
@@ -37,21 +39,19 @@ export default function AgentsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 min-h-[50vh] flex items-center">
-        {/* Geometric Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45 animate-pulse"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12 animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-40 left-40 w-24 h-24 bg-[#E93E8F] rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
-        </div>
+      <section className="relative bg-gradient-to-br from-[#0F0520] via-[#1A0A2E] via-[#2D1B69] via-[#3A0A63] to-[#0F0520] text-white py-20 min-h-[50vh] flex items-center">
+        {/* Logo Shapes Background */}
+        <LogoShapesBg />
+        
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
         
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl lg:text-7xl font-bold mb-8">
               <span className="text-white">OUR</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">
-                AI AGENTS
-              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">AI AGENTS</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
               Stop losing revenue to manual admin, slow follow-ups, and missed opportunities. 
@@ -63,12 +63,16 @@ export default function AgentsPage() {
       </section>
 
       {/* Agents Grid Section */}
-      <section className="py-16 relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
+      <section className="relative py-16 bg-gradient-to-br from-[#0F0520] via-[#1A0A2E] via-[#2D1B69] via-[#3A0A63] to-[#0F0520]">
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        
         <div className="container-responsive relative z-10">
           {/* Section Intro */}
           <div className="text-center mb-12">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                      {selectedIndustry === 'All' ? 'MOST POPULAR' : `${selectedIndustry}`} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">AI AGENTS</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                      <span className="text-white">{selectedIndustry === 'All' ? 'MOST POPULAR' : `${selectedIndustry}`}</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">AI AGENTS</span>
                     </h2>
             <p className="text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed">
               {selectedIndustry === 'All' 
@@ -91,7 +95,7 @@ export default function AgentsPage() {
 
           {/* Agents Grid */}
                   {filteredAgents.length > 0 ? (
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
               {filteredAgents.map(agent => (
                 <AgentCard 
                   key={agent.slug} 
@@ -124,7 +128,7 @@ export default function AgentsPage() {
           )}
 
           {/* Footer Note */}
-          <div className="mt-6 text-center bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 border-2 border-[#E93E8F]/20">
+          <div className="mt-6 text-center bg-gradient-to-br from-gray-50 to-white rounded-3xl p-4 border-2 border-brand-hotpink/20">
             <p className="text-sm text-gray-700 max-w-3xl mx-auto leading-relaxed">
               <strong className="text-[#2D1B69]">Why 30% below market?</strong> Agentify prices are 30% below comparable 
               U.S. market rates for SMB automation because we specialize in n8n-based workflows and managed integrations 

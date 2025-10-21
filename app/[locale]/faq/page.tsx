@@ -3,6 +3,8 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { BackgroundShapes } from '@/components/background-shapes'
+import LogoShapesBg from '@/components/logo-shapes-bg'
+import Headline from '@/components/headline'
 
 export default function FAQPage() {
   const t = useTranslations('faq')
@@ -61,18 +63,19 @@ export default function FAQPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 min-h-[50vh] flex items-center">
-        {/* Geometric Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12"></div>
-        </div>
+      <section className="relative bg-gradient-to-br from-[#0F0520] via-[#1A0A2E] via-[#2D1B69] via-[#3A0A63] to-[#0F0520] text-white py-20 min-h-[50vh] flex items-center">
+        {/* Logo Shapes Background */}
+        <LogoShapesBg />
+        
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
         
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-5xl lg:text-7xl font-bold mb-8">
               <span className="text-white">{t('title').split(' ').slice(0, 2).join(' ')}</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">{t('title').split(' ').slice(2).join(' ')}</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">{t('title').split(' ').slice(2).join(' ')}</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
               {t('subtitle')}
@@ -82,8 +85,13 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-20 relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
-        <BackgroundShapes variant="light" intensity="low" />
+      <section className="relative py-20 bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        <LogoShapesBg />
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">

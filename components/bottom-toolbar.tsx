@@ -42,7 +42,7 @@ export function BottomToolbar() {
             <div className="-translate-y-6">
               <CalendlyModal
                 label="Book"
-                className="rounded-full px-5 py-3 text-white font-bold shadow-xl bg-gradient-to-r from-[#D63384] to-[#2D1B69]"
+                className="rounded-full px-5 py-3 text-white font-bold shadow-xl bg-gradient-to-r from-[#E93E8F] to-[#2D1B69]"
               />
             </div>
 

@@ -1,3 +1,5 @@
+import LogoShapesBg from '@/components/logo-shapes-bg'
+
 export const metadata = { title: "Security | Agentify" };
 
 export default function Page() {
@@ -5,16 +7,18 @@ export default function Page() {
     <>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12"></div>
-        </div>
+        {/* Logo Shapes Background */}
+        <LogoShapesBg />
+        
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
         
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               <span className="text-white">Security</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">First</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">First</span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
               We prioritize confidentiality, integrity, and availability of customer data with enterprise-grade security measures.
@@ -211,7 +215,7 @@ export default function Page() {
       <section className="py-16 bg-white">
         <div className="container-responsive">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-gradient-to-r from-[#2D1B69] to-[#E93E8F] rounded-2xl p-12 text-white">
+            <div className="bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] rounded-2xl p-12 text-white">
               <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clipRule="evenodd" />

@@ -7,12 +7,14 @@ import { TestimonialsV2 } from '@/components/testimonials-v2'
 import { FinalCTAV2 } from '@/components/final-cta-v2'
 import { agents as allAgents } from '@/content/agents'
 import { AgentCard } from '@/components/agent-card'
+import Headline from '@/components/headline'
+import LogoShapesBg from '@/components/logo-shapes-bg'
 
 export default function HomePage() {
   const t = useTranslations('home')
   
-  // Show only the top 6 hot agents
-  const popularAgents = allAgents.filter(agent => agent.isHot).slice(0, 6)
+  // Show only the top 8 hot agents
+  const popularAgents = allAgents.filter(agent => agent.isHot).slice(0, 8)
 
   // JSON-LD structured data for SEO
   const jsonLd = {
@@ -41,33 +43,39 @@ export default function HomePage() {
       <HeroV3 />
 
       {/* Popular agents section */}
-      <section className="py-24 bg-[#130724]">
+      <section className="relative py-24 bg-[#130724]">
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        <LogoShapesBg />
         <div className="container-responsive">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-text-high mb-6">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">Hot Agents</span>
-            </h2>
+            <Headline className="mb-6">
+              <span className="text-white">OUR</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">HOT AGENTS</span>
+            </Headline>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Ready-made AI agents that handle your most time-consuming tasks automatically. 
               Deploy in 24 hours, see results immediately.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {popularAgents.map((agent) => (
               <div key={agent.slug} className="group">
-                <AgentCard 
-                  title={agent.name} 
-                  slug={agent.slug} 
-                  summary={agent.blurb}
-                  category={agent.category}
-                  subtitle={agent.subtitle}
-                  industry={agent.industry}
-                  tier={agent.tier}
-                  metrics={agent.metrics}
-                  disclaimer={agent.disclaimer}
-                  isHot={agent.isHot}
-                />
+              <AgentCard 
+                title={agent.name} 
+                slug={agent.slug} 
+                summary={agent.blurb}
+                category={agent.category}
+                subtitle={agent.subtitle}
+                industry={agent.industry}
+                tier={agent.tier}
+                metrics={agent.metrics}
+                disclaimer={agent.disclaimer}
+                isHot={agent.isHot}
+              />
               </div>
             ))}
           </div>

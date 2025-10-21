@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Bot } from 'lucide-react'
+import { Bot, Stethoscope, Calculator, Home, Scale, Shield, Building, Heart, Briefcase, Users, Car, ShoppingCart, BookOpen, Plane, Trophy } from 'lucide-react'
 import { pricingByTier, type Tier, type Industry } from '@/content/agents'
 
 type Props = {
@@ -18,32 +18,50 @@ type Props = {
   isHot?: boolean
 }
 
+// Field icon mapping
+const getFieldIcon = (industry: Industry | undefined) => {
+  const iconMap: Record<string, any> = {
+    'Real Estate': Home,
+    'Healthcare / Clinics': Stethoscope,
+    'Legal Firms': Scale,
+    'Insurance Agencies': Shield,
+    'Accounting & Finance Offices': Calculator,
+    'Education / Training Centers': BookOpen,
+    'Logistics / Delivery': Car,
+    'E-commerce': ShoppingCart,
+    'HR / Recruitment Agencies': Users,
+    'Marketing / Advertising Agencies': Briefcase
+  }
+  return iconMap[industry || ''] || Bot
+}
+
 export function AgentCard({ title, slug, summary, category = "AI Agent", subtitle, industry, tier, metrics, disclaimer, isHot }: Props) {
   const pricing = tier ? pricingByTier[tier] : null
   const params = useParams()
   const locale = params.locale || 'en'
+  const FieldIcon = getFieldIcon(industry)
   return (
     <Link href={`/${locale}/agents/${slug}`} className="group block">
       <motion.article
         whileHover={{ y: -6, scale: 1.03 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-        className="rounded-3xl border-2 border-[#E93E8F] bg-gradient-to-br from-white to-gray-50 overflow-hidden shadow-xl hover:shadow-2xl hover:border-[#FF6B9D] transition-all duration-300 h-full flex flex-col relative group"
+        className="rounded-3xl border-2 border-[#E93E8F] bg-gradient-to-br from-white to-gray-50 overflow-hidden shadow-xl hover:shadow-2xl hover:border-[#FF6B9D] transition-all duration-300 aspect-[4/5] relative group"
       >
-        {/* Hot Badge */}
-        {isHot && (
-          <div className="absolute top-2 right-2 z-10">
-            <span className="inline-block px-3 py-1 bg-gradient-to-r from-orange-500 to-red-600 text-white text-sm font-bold rounded-full uppercase tracking-wide shadow-lg animate-pulse">
-              🔥 HOT
-            </span>
-          </div>
-        )}
         
-        <div className="p-5 flex flex-col h-full">
+        <div className="p-4 flex flex-col h-full relative">
           {/* Industry Badge */}
           {industry && (
             <div className="mb-3">
               <span className="inline-block px-3 py-1 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white text-sm font-bold rounded-full uppercase tracking-wide">
-                {industry}
+                {industry === 'Healthcare / Clinics' ? 'Healthcare' :
+                 industry === 'Legal Firms' ? 'Legal' :
+                 industry === 'Insurance Agencies' ? 'Insurance' :
+                 industry === 'Accounting & Finance Offices' ? 'Finance' :
+                 industry === 'Education / Training Centers' ? 'Education' :
+                 industry === 'Logistics / Delivery' ? 'Logistics' :
+                 industry === 'HR / Recruitment Agencies' ? 'HR' :
+                 industry === 'Marketing / Advertising Agencies' ? 'Marketing' :
+                 industry}
               </span>
             </div>
           )}
@@ -51,13 +69,13 @@ export function AgentCard({ title, slug, summary, category = "AI Agent", subtitl
           {/* Icon Section */}
           <div className="flex justify-center mb-4">
             <div className="w-14 h-14 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-xl flex items-center justify-center group-hover:from-[#FF6B9D] group-hover:to-[#3D2A7A] transition-colors shadow-lg group-hover:shadow-xl">
-              <Bot className="w-7 h-7 text-white" />
+              <FieldIcon className="w-7 h-7 text-white" />
             </div>
           </div>
           
           {/* Title & Subtitle */}
           <div className="text-center mb-3">
-            <h3 className="text-lg font-bold text-[#2D1B69] group-hover:text-[#E93E8F] transition-colors mb-1 leading-tight">
+            <h3 className="text-base font-bold text-[#2D1B69] group-hover:text-[#E93E8F] transition-colors mb-1 leading-tight">
               {title}
             </h3>
             {subtitle && (
@@ -69,29 +87,15 @@ export function AgentCard({ title, slug, summary, category = "AI Agent", subtitl
           
           {/* Metrics */}
           {metrics && metrics.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4 justify-center">
+            <div className="flex gap-1 mb-2 justify-center overflow-hidden">
               {metrics.map((metric, idx) => (
                 <span 
                   key={idx}
-                  className="inline-block px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-[#2D1B69] text-sm font-bold rounded-full border border-[#E93E8F]/30 shadow-sm"
+                  className="inline-block px-1 py-0.5 bg-gradient-to-r from-blue-50 to-purple-50 text-[#2D1B69] text-xs font-bold rounded-full border border-[#E93E8F]/30 shadow-sm whitespace-nowrap"
                 >
                   {metric}
                 </span>
               ))}
-            </div>
-          )}
-          
-          {/* Pricing Block - Only for Hot Agents */}
-          {pricing && isHot && (
-            <div className="mb-4">
-              <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-3 border border-[#E93E8F]/20 shadow-sm">
-                <div className="text-xs text-gray-400 line-through mb-1 text-center">
-                  Market: ${pricing.marketSetup.toLocaleString()} / ${pricing.marketMonthly.toLocaleString()}/mo
-                </div>
-                <div className="text-sm font-bold text-center">
-                  <span className="text-[#E93E8F]">-30%:</span> <span className="text-[#2D1B69]">${pricing.agentifySetup.toLocaleString()} / ${pricing.agentifyMonthly.toLocaleString()}/mo</span>
-                </div>
-              </div>
             </div>
           )}
           
@@ -102,10 +106,28 @@ export function AgentCard({ title, slug, summary, category = "AI Agent", subtitl
             </div>
           )}
           
-          {/* CTA / Category Tag */}
-          <div className="flex justify-center mt-auto">
+          {/* Pricing - Only show for popular agents */}
+          {pricing && isHot && (
+            <div className="mb-4 text-center">
+              <div className="text-lg font-bold text-[#2D1B69] mb-1">
+                ${pricing.agentifySetup}
+              </div>
+              <div className="text-xs text-gray-600 mb-1">
+                Setup • ${pricing.agentifyMonthly}/mo
+              </div>
+              <div className="text-xs text-gray-400 line-through">
+                Market: ${pricing.marketSetup} • ${pricing.marketMonthly}/mo
+              </div>
+            </div>
+          )}
+          
+          {/* Spacer to push CTA to bottom */}
+          <div className="flex-1"></div>
+          
+          {/* CTA / Category Tag - Fixed at bottom */}
+          <div className="flex justify-center">
             <span className="px-5 py-2 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white text-sm font-bold rounded-full group-hover:from-[#2D1B69] group-hover:to-[#E93E8F] transition-colors shadow-md group-hover:shadow-lg">
-              {industry || category || 'See Demo'}
+              Explore Agent
             </span>
           </div>
         </div>

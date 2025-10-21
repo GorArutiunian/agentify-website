@@ -42,7 +42,7 @@ export function Philosophy() {
             <div className="grid md:grid-cols-3 gap-8">
               {philosophyItems.map((item, index) => (
                 <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl shadow-agentify-card p-8 border border-white/10 hover:shadow-agentify-glow transition-all duration-300 group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-brand-hotpink to-brand-magenta rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-hotpink to-brand-magenta rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>

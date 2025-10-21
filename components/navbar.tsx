@@ -70,7 +70,10 @@ export function Navbar() {
         <div className="container-responsive flex h-16 md:h-14 items-center justify-between">
           <Link href={`/${locale}`} className={`flex items-center gap-3 font-bold text-2xl md:text-3xl transition-all duration-300 ${textColor} hover:scale-105 hover:text-[#2D1B69]`}>
             <img src="/agentify-logo.png" alt="Agentify Logo" className="w-8 h-8 md:w-10 md:h-10" />
-            Agentify
+            <span className="flex items-baseline">
+              <span>Agentify</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta text-lg md:text-xl ml-1 -mb-1">bots</span>
+            </span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -96,7 +99,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-3 ml-8">
             <CalendlyModal 
               label="Get Started" 
-              className="px-6 py-3 bg-gradient-to-r from-[#D63384] to-[#2D1B69] text-white font-bold text-base rounded-lg hover:scale-110 transition-all duration-300 hover:from-[#2D1B69] hover:to-[#D63384] shadow-lg flex items-center justify-center" 
+              className="px-6 py-3 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-base rounded-lg hover:scale-110 transition-all duration-300 shadow-lg flex items-center justify-center" 
             />
           </div>
 
@@ -165,7 +168,7 @@ export function Navbar() {
           <div className="pt-4 border-t border-gray-200">
             <CalendlyModal 
               label="Get Started" 
-              className="w-full px-6 py-3 bg-gradient-to-r from-[#D63384] to-[#2D1B69] text-white font-bold text-base rounded-lg hover:scale-105 transition-all duration-300 hover:from-[#2D1B69] hover:to-[#D63384] shadow-lg flex items-center justify-center" 
+              className="w-full px-6 py-3 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-base rounded-lg hover:scale-105 transition-all duration-300 shadow-lg flex items-center justify-center" 
             />
           </div>
         </nav>

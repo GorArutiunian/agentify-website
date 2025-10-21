@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { agents, pricingByTier, type AgentDetail } from '@/content/agents'
 import { Bot, CheckCircle, Zap, TrendingUp, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import LogoShapesBg from '@/components/logo-shapes-bg'
 
 export default function AgentDetail({ params }: { params: { slug: string; locale: string } }) {
   const agent = agents.find((a: AgentDetail) => a.slug === params.slug)
@@ -10,8 +11,15 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
   const pricing = agent.tier ? pricingByTier[agent.tier] : null
 
   return (
-    <div className="min-h-screen" style={{backgroundColor: '#2D1B69'}}>
-      <main className="container-responsive pt-24 pb-16" style={{backgroundColor: '#2D1B69'}}>
+    <div className="relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] min-h-screen">
+      {/* Logo Shapes Background */}
+      <LogoShapesBg />
+      
+      {/* Glowing line separators */}
+      <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+      <span className="pointer-events-none absolute inset-x-0 top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+      
+      <main className="container-responsive relative z-10 pt-24 pb-16">
         {/* Breadcrumb */}
         <div className="mb-8">
           <Link href={`/${params.locale}/agents`} className="text-[#E93E8F] hover:text-[#FF6B9D] font-semibold text-sm flex items-center gap-2">
@@ -22,12 +30,12 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
         {/* Header */}
         <div className="mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-20 h-20 bg-gradient-to-br from-[#E93E8F] to-[#FF6B9D] rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-20 h-20 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] rounded-2xl flex items-center justify-center shadow-xl">
               <Bot className="w-10 h-10 text-white" />
             </div>
             <div>
               <div className="mb-2">
-                <span className="inline-block px-3 py-1 bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D] text-white text-xs font-bold rounded-full uppercase tracking-wide">
+                <span className="inline-block px-3 py-1 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] text-white text-xs font-bold rounded-full uppercase tracking-wide">
                   {agent.industry}
                 </span>
               </div>
@@ -136,7 +144,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
             <ol className="space-y-4">
               {agent.steps.map((step: string, index: number) => (
                 <li key={index} className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-[#E93E8F] to-[#2D1B69] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">
+                  <div className="w-8 h-8 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">
                     {index + 1}
                   </div>
                   <span className="text-[#2D1B69] font-medium pt-1">{step}</span>
@@ -203,7 +211,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
               </div>
 
               {/* Agentify Price */}
-              <div className="bg-gradient-to-br from-[#E93E8F]/10 to-[#2D1B69]/10 rounded-2xl p-6 border-4 border-[#E93E8F] shadow-xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-brand-hotpink/10 to-brand-magenta/10 rounded-2xl p-6 border-4 border-brand-hotpink shadow-xl relative overflow-hidden">
                 <div className="absolute top-2 right-2">
                   <span className="inline-block px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold rounded-full uppercase">
                     Save 30%
@@ -239,7 +247,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
         )}
 
         {/* CTA */}
-        <div className="text-center bg-gradient-to-br from-[#E93E8F]/20 to-[#2D1B69]/20 rounded-3xl p-12 border-2 border-[#E93E8F]">
+        <div className="text-center bg-gradient-to-br from-brand-hotpink/20 to-brand-magenta/20 rounded-3xl p-12 border-2 border-brand-hotpink">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Get a personalized quote and demo in 24 hours. See exactly how this agent fits your workflow.
@@ -248,7 +256,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
             href={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/15min'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-full hover:from-[#2D1B69] hover:to-[#E93E8F] transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] text-white font-bold text-lg rounded-full hover:from-[#ff3c91] hover:via-[#3a0a63] hover:to-[#130724] transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Book Free Consultation <ArrowRight className="w-5 h-5" />
           </a>

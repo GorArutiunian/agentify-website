@@ -4,6 +4,8 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { CalendlyModal } from '@/components/calendly-modal'
 import { BackgroundShapes } from '@/components/background-shapes'
+import LogoShapesBg from '@/components/logo-shapes-bg'
+import Headline from '@/components/headline'
 
 const schema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -42,18 +44,19 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 min-h-[50vh] flex items-center">
-        {/* Geometric Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12"></div>
-        </div>
+      <section className="relative bg-gradient-to-br from-[#0F0520] via-[#1A0A2E] via-[#2D1B69] via-[#3A0A63] to-[#0F0520] text-white py-20 min-h-[50vh] flex items-center">
+        {/* Logo Shapes Background */}
+        <LogoShapesBg />
+        
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
         
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-5xl lg:text-7xl font-bold mb-8">
               <span className="text-white">LET'S</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">CONNECT</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">CONNECT</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed">
               Ready to transform your business with AI automation? Let's discuss your needs.
@@ -63,16 +66,21 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 relative bg-[#130724]">
-        <BackgroundShapes variant="light" intensity="low" />
+      <section className="relative py-20 bg-[#130724]">
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+        <LogoShapesBg />
         <div className="container-responsive relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               {/* Contact Form */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                    SEND US A <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">MESSAGE</span>
+                  <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                    <span className="text-white">SEND US A</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">MESSAGE</span>
                   </h2>
                   <p className="text-lg text-gray-200">
                     Fill out the form below and we'll get back to you within 24 hours.
@@ -137,7 +145,7 @@ export default function ContactPage() {
                   
                   <button 
                     disabled={isSubmitting} 
-                    className="w-full px-8 py-4 bg-gradient-to-r from-primary to-accent-purple text-white font-bold text-lg rounded-xl hover:scale-105 transition-transform shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-8 py-4 bg-gradient-to-r from-brand-hotpink to-[#6B1A7B] text-white font-bold text-lg rounded-xl hover:scale-105 transition-transform shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
@@ -146,14 +154,14 @@ export default function ContactPage() {
               
               {/* Contact Info & CTA */}
               <div className="space-y-8">
-                <div className="bg-gradient-to-br from-white to-gray-100 text-[#2D1B69] rounded-3xl p-8 shadow-xl border-2 border-[#E93E8F]">
-                  <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D] mb-6">GET STARTED TODAY</h3>
+                <div className="bg-gradient-to-br from-white to-gray-100 text-[#2D1B69] rounded-3xl p-8 shadow-xl border-2 border-brand-hotpink">
+                  <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta mb-6">GET STARTED TODAY</h3>
                   <p className="text-[#2D1B69] mb-8 font-medium">
                     Prefer to speak directly? Schedule a free consultation call with our AI automation experts.
                   </p>
                   <CalendlyModal 
                     label="Schedule FREE Call" 
-                    className="w-full px-8 py-4 bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D] text-white font-bold text-lg rounded-xl hover:scale-105 transition-transform shadow-lg" 
+                    className="w-full px-8 py-4 bg-gradient-to-r from-brand-hotpink to-[#6B1A7B] text-white font-bold text-lg rounded-xl hover:scale-105 transition-transform shadow-lg" 
                   />
                 </div>
                 
@@ -162,8 +170,8 @@ export default function ContactPage() {
                     <h4 className="text-xl font-bold text-[#2D1B69] mb-4">Contact Information</h4>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#E93E8F] rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">@</span>
+                        <div className="w-10 h-10 bg-gradient-to-br from-white/80 to-white/20 rounded-full flex items-center justify-center border border-white/50 shadow-lg">
+                          <span className="text-[#2D1B69] font-bold">@</span>
                         </div>
                         <div>
                           <div className="font-semibold text-[#2D1B69]">Email</div>
@@ -177,8 +185,8 @@ export default function ContactPage() {
                     <h4 className="text-xl font-bold text-[#2D1B69] mb-4">Follow Us</h4>
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">IG</span>
+                        <div className="w-10 h-10 bg-gradient-to-br from-white/80 to-white/20 rounded-full flex items-center justify-center border border-white/50 shadow-lg">
+                          <span className="text-[#2D1B69] font-bold">IG</span>
                         </div>
                         <div>
                           <div className="font-semibold text-[#2D1B69]">Instagram</div>
@@ -186,8 +194,8 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">f</span>
+                        <div className="w-10 h-10 bg-gradient-to-br from-white/80 to-white/20 rounded-full flex items-center justify-center border border-white/50 shadow-lg">
+                          <span className="text-[#2D1B69] font-bold">f</span>
                         </div>
                         <div>
                           <div className="font-semibold text-[#2D1B69]">Facebook</div>
@@ -197,11 +205,11 @@ export default function ContactPage() {
                     </div>
                   </div>
                   
-                  <div className="bg-white border-2 border-[#E93E8F] rounded-2xl p-6 shadow-lg">
+                  <div className="bg-white border-2 border-brand-hotpink rounded-2xl p-6 shadow-lg">
                     <h4 className="text-xl font-bold text-[#2D1B69] mb-4">Response Time</h4>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#E93E8F] rounded-full flex items-center justify-center">
-                        <span className="text-white font-bold">→</span>
+                      <div className="w-10 h-10 bg-gradient-to-br from-white/80 to-white/20 rounded-full flex items-center justify-center border border-white/50 shadow-lg">
+                        <span className="text-[#2D1B69] font-bold">→</span>
                       </div>
                       <div>
                         <div className="font-semibold text-[#2D1B69]">Within 24 Hours</div>

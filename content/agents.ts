@@ -27,24 +27,24 @@ export type PricingInfo = {
 export const pricingByTier: Record<Tier, PricingInfo> = {
   simple: {
     tier: 'simple',
-    marketSetup: 800,
-    marketMonthly: 250,
-    agentifySetup: 560,
-    agentifyMonthly: 175
+    marketSetup: 2000,
+    marketMonthly: 500,
+    agentifySetup: 1200,
+    agentifyMonthly: 350
   },
   standard: {
     tier: 'standard',
-    marketSetup: 1800,
-    marketMonthly: 600,
-    agentifySetup: 1260,
-    agentifyMonthly: 420
+    marketSetup: 3500,
+    marketMonthly: 800,
+    agentifySetup: 1800,
+    agentifyMonthly: 560
   },
   complex: {
     tier: 'complex',
-    marketSetup: 3000,
-    marketMonthly: 900,
-    agentifySetup: 2100,
-    agentifyMonthly: 630
+    marketSetup: 5000,
+    marketMonthly: 1200,
+    agentifySetup: 2200,
+    agentifyMonthly: 840
   }
 }
 
@@ -477,11 +477,11 @@ export const agents: AgentDetail[] = [
   {
     slug: 'legal-client-intake',
     name: 'Client Intake Bot',
-    subtitle: 'Qualify prospects before consultation',
+    subtitle: 'Qualify prospects fast',
     blurb: 'Collect case details, check conflicts, and schedule consultations automatically so only qualified leads reach your calendar.',
     industry: 'Legal Firms',
-    tier: 'standard',
-    metrics: ['+40% qualified leads', '-70% admin time'],
+    tier: 'complex',
+    metrics: ['+40% lead', '-70% admin time'],
     isHot: true,
     category: 'Sales',
     features: [
@@ -1281,10 +1281,10 @@ export const agents: AgentDetail[] = [
   {
     slug: 'logistics-shipment-tracking',
     name: 'Shipment Tracking Bot',
-    subtitle: 'Real-time visibility for every package',
+    subtitle: 'Real-time package visibility',
     blurb: 'Automatic tracking updates keep customers informed and reduce where-is-my-order inquiries by 80%.',
     industry: 'Logistics / Delivery',
-    tier: 'standard',
+    tier: 'simple',
     metrics: ['-80% inquiry calls', '95% satisfaction'],
     isHot: true,
     category: 'Sales',

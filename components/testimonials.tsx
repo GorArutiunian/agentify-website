@@ -165,7 +165,7 @@ export function Testimonials() {
               className="flex-shrink-0 bg-white rounded-2xl p-6 shadow-xl border-2 border-[#E93E8F]/20 hover:border-[#E93E8F] transition-all w-[400px]"
             >
               <div className="mb-4">
-                <span className="inline-block px-3 py-1 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white text-xs font-bold rounded-full">
+                <span className="inline-block px-3 py-1 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] text-white text-xs font-bold rounded-full">
                   {testimonial.agent}
                 </span>
               </div>

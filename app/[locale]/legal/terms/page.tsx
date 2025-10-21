@@ -1,3 +1,5 @@
+import LogoShapesBg from '@/components/logo-shapes-bg'
+
 export const metadata = { title: "Terms of Service | Agentify" };
 
 export default function Page() {
@@ -5,16 +7,18 @@ export default function Page() {
     <>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#2D1B69] via-[#3D2A7A] to-[#2D1B69] text-white py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-40 h-40 bg-[#E93E8F] transform rotate-45"></div>
-          <div className="absolute bottom-20 left-20 w-32 h-32 bg-[#FF6B9D] transform -rotate-12"></div>
-        </div>
+        {/* Logo Shapes Background */}
+        <LogoShapesBg />
+        
+        {/* Glowing line separators */}
+        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
         
         <div className="container-responsive relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               <span className="text-white">Terms of</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E93E8F] to-[#FF6B9D]">Service</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">Service</span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
               Please read these terms carefully before using our AI agent services.
@@ -175,7 +179,7 @@ export default function Page() {
                         Any disputes will be resolved through binding arbitration.
                       </p>
                     </div>
-                    <div className="bg-gradient-to-r from-[#2D1B69] to-[#E93E8F] rounded-lg p-6 text-white">
+                    <div className="bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] rounded-lg p-6 text-white">
                       <h3 className="font-semibold mb-2">Legal Contact</h3>
                       <p className="text-gray-200 mb-2">agentifyworks@gmail.com</p>
                       <p className="text-gray-300 text-sm">For questions about these terms</p>

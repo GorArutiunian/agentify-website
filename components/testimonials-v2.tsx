@@ -1,5 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react'
+import Headline from '@/components/headline'
+import LogoShapesBg from '@/components/logo-shapes-bg'
 
 const testimonials = [
   {
@@ -84,14 +86,20 @@ export function TestimonialsV2() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91]">
+    <section className="relative py-24 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91]">
+      {/* Glowing line separators */}
+      <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+      <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+      <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
+      <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
+      <LogoShapesBg />
       <div className="container-responsive">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            What our clients say
-          </h2>
-          <p className="text-xl text-gray-200 mb-16">
-            Real results from real businesses
+          <Headline className="mb-6">
+            <span className="text-white">What our</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">clients say</span>
+          </Headline>
+          <p className="text-xl text-white mb-16">
+            <span className="text-white">Real results from real businesses</span>
           </p>
 
           {/* Testimonial Card */}
