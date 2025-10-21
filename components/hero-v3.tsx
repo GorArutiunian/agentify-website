@@ -50,18 +50,18 @@ export function HeroV3() {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8">
-              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
-                <div className="text-2xl font-bold text-text-high">≤ 2 min</div>
-                <div className="text-gray-300 text-sm">avg response</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8">
+              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-4">
+                <div className="text-xl font-bold text-text-high">≤ 2 min</div>
+                <div className="text-gray-300 text-xs">avg response</div>
               </div>
-              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
-                <div className="text-2xl font-bold text-text-high">30-50% fewer</div>
-                <div className="text-gray-300 text-sm">no-shows</div>
+              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-4">
+                <div className="text-xl font-bold text-text-high">30-50% fewer</div>
+                <div className="text-gray-300 text-xs">no-shows</div>
               </div>
-              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-6">
-                <div className="text-2xl font-bold text-text-high">Up to 40%</div>
-                <div className="text-gray-300 text-sm">more lead</div>
+              <div className="bg-white/5 backdrop-blur ring-1 ring-white/10 rounded-xl p-4">
+                <div className="text-xl font-bold text-text-high">Up to 40%</div>
+                <div className="text-gray-300 text-xs">more lead</div>
               </div>
             </div>
           </div>
