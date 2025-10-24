@@ -38,7 +38,7 @@ export function HeroV3() {
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <CalendlyModal 
-                label="Book a 15-min consult" 
+                label="Book a 30-min consult" 
                 className="px-8 py-4 bg-gradient-to-r from-[#ff3c91] to-[#b833ff] text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2" 
               />
               <a 

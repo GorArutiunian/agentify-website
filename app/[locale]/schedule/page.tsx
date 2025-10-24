@@ -4,7 +4,7 @@ import LogoShapesBg from '@/components/logo-shapes-bg'
 
 export default function SchedulePage() {
   const calendlyUrl = useMemo(() => (
-    process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/15min'
+    process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/30min'
   ), [])
 
   return (

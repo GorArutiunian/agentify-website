@@ -253,7 +253,7 @@ export default function AgentDetail({ params }: { params: { slug: string; locale
             Get a personalized quote and demo in 24 hours. See exactly how this agent fits your workflow.
           </p>
           <a 
-            href={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/15min'}
+            href={process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/agentifyworks/30min'}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-br from-[#130724] via-[#3a0a63] to-[#ff3c91] text-white font-bold text-lg rounded-full hover:from-[#ff3c91] hover:via-[#3a0a63] hover:to-[#130724] transition-all duration-300 shadow-lg hover:shadow-xl"

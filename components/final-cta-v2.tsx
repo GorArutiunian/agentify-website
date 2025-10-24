@@ -23,7 +23,7 @@ export function FinalCTAV2() {
           {/* Call to Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
             <CalendlyModal
-              label="Book a 15-min consult"
+              label="Book a 30-min consult"
               className="px-10 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2"
             />
             <a
