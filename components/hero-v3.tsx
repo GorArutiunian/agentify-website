@@ -28,15 +28,15 @@ export function HeroV3() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Content */}
           <div className="space-y-8">
-            <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-text-high mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-high mb-6 leading-tight">
               <span className="text-white">AI agents for</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">smart businesses.</span>
             </h1>
             
-            <p className="text-xl text-gray-200 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
               We deploy ready-made AI agents for sales, support and ops—so you reply in minutes, cut costs, and never miss a lead.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <CalendlyModal 
                 label="Book a 30-min consult" 
                 className="px-8 py-4 bg-gradient-to-r from-[#ff3c91] to-[#b833ff] text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2" 
@@ -70,7 +70,7 @@ export function HeroV3() {
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
               {/* Phone Frame */}
-              <div className="w-64 sm:w-72 md:w-80 h-[400px] sm:h-[450px] md:h-[500px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
+              <div className="w-64 sm:w-72 md:w-80 h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] bg-gray-900 rounded-[3rem] p-2 shadow-2xl">
                 <div className="w-full h-full bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-6 flex flex-col">
                   {/* Phone Header */}
                   <div className="flex items-center justify-between mb-6">

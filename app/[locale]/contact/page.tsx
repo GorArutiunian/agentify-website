@@ -75,20 +75,20 @@ export default function ContactPage() {
         <LogoShapesBg />
         <div className="container-responsive relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               {/* Contact Form */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 <div>
-                  <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
                     <span className="text-white">SEND US A</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">MESSAGE</span>
                   </h2>
-                  <p className="text-lg text-gray-200">
+                  <p className="text-base sm:text-lg text-gray-200">
                     Fill out the form below and we'll get back to you within 24 hours.
                   </p>
                 </div>
                 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <input 
                         className={`w-full rounded-xl border-2 bg-white px-4 py-3 focus:outline-none transition-colors ${

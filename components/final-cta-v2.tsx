@@ -21,14 +21,14 @@ export function FinalCTAV2() {
           </p>
           
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
             <CalendlyModal
               label="Book a 30-min consult"
-              className="px-10 py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2"
+              className="px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#E93E8F] to-[#2D1B69] text-white font-bold text-base sm:text-lg rounded-xl hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2"
             />
             <a
               href="mailto:agentifyworks@gmail.com"
-              className="px-10 py-4 ring-1 ring-white/30 hover:ring-brand-hotpink text-white font-bold text-lg rounded-xl hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
+              className="px-8 sm:px-10 py-3 sm:py-4 ring-1 ring-white/30 hover:ring-brand-hotpink text-white font-bold text-base sm:text-lg rounded-xl hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
             >
               Email us
             </a>

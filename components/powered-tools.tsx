@@ -32,8 +32,8 @@ export function PoweredTools() {
             <span className="text-white">Powered by</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">professional tools</span>
           </Headline>
           
-          {/* Tools Grid - Two equal lines, 1.1x bigger */}
-          <div className="grid grid-cols-6 gap-4 sm:gap-5 md:gap-6 max-w-5xl mx-auto">
+          {/* Tools Grid - Responsive grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 max-w-5xl mx-auto">
             {tools.map((tool, index) => (
               <a
                 key={tool.name}
@@ -42,14 +42,14 @@ export function PoweredTools() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center justify-center group hover:scale-110 transition-all duration-300"
               >
-                <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 flex items-center justify-center mb-3 sm:mb-4">
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-white/30 rounded-lg flex items-center justify-center border border-white/30 shadow-lg p-2">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 flex items-center justify-center mb-2 sm:mb-3 md:mb-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-white/30 rounded-lg flex items-center justify-center border border-white/30 shadow-lg p-1 sm:p-2">
                     <img
                       src={tool.src}
                       alt={tool.name}
                       width={56}
                       height={56}
-                      className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain group-hover:scale-110 group-hover:brightness-120 transition-all duration-200 ease-in-out"
+                      className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain group-hover:scale-110 group-hover:brightness-120 transition-all duration-200 ease-in-out"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
@@ -58,12 +58,12 @@ export function PoweredTools() {
                         }
                       }}
                     />
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/10 rounded-lg flex items-center justify-center text-white font-bold text-xs hidden">
+                    <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/10 rounded-lg flex items-center justify-center text-white font-bold text-xs hidden">
                       {tool.name.charAt(0)}
                     </div>
                   </div>
                 </div>
-                <span className="text-sm sm:text-base text-white text-center leading-tight font-medium">
+                <span className="text-xs sm:text-sm md:text-base text-white text-center leading-tight font-medium">
                   {tool.name}
                 </span>
               </a>

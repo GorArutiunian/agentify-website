@@ -31,17 +31,17 @@ export function AgentsClient({ agents, categories, locale }: Props) {
           </button>
         ))}
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filtered.map((a) => (
           <Link
             key={a.slug}
             href={`/${locale}/agents/${a.slug}`}
-            className="rounded-2xl border border-pink-100 bg-light-cream p-6 shadow-sm hover:shadow-md transition flex flex-col items-center h-full min-h-[280px]"
+            className="rounded-2xl border border-pink-100 bg-light-cream p-4 sm:p-6 shadow-sm hover:shadow-md transition flex flex-col items-center h-full min-h-[240px] sm:min-h-[280px]"
           >
             <div className="mb-4">
               <AnimatedAgentIcon name={a.name} animation={a.slug} />
             </div>
-            <div className="text-lg font-medium text-secondary text-center mb-2">{a.name}</div>
+            <div className="text-base sm:text-lg font-medium text-secondary text-center mb-2">{a.name}</div>
             <p className="text-sm text-slate-600 text-center leading-relaxed flex-grow">{a.blurb}</p>
             <div className="mt-4 inline-flex rounded-full border px-3 py-1 text-xs text-slate-600 bg-white/50">{a.category}</div>
           </Link>

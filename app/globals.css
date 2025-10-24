@@ -18,6 +18,29 @@ body {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  /* Reduce spacing on mobile */
+  .space-y-8 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  /* Improve button touch targets */
+  button, a {
+    min-height: 44px;
+  }
+  
+  /* Better text sizing on mobile */
+  h1 {
+    line-height: 1.1;
+  }
+  
+  /* Reduce padding on mobile cards */
+  .p-6 {
+    padding: 1rem;
+  }
+}
+
 /* Global utility classes and animations moved from styled-jsx to avoid runtime errors */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
