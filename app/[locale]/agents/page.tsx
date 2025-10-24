@@ -63,7 +63,7 @@ export default function AgentsPage() {
       </section>
 
       {/* Agents Grid Section */}
-      <section className="relative py-16 bg-gradient-to-br from-[#0F0520] via-[#1A0A2E] via-[#2D1B69] via-[#3A0A63] to-[#0F0520]">
+      <section className="relative py-16 pb-32 bg-gradient-to-br from-[#0F0520] via-[#1A0A2E] via-[#2D1B69] via-[#3A0A63] to-[#0F0520]">
         {/* Glowing line separators */}
         <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
         <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
