@@ -34,6 +34,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Analytics (optional) */}
         <script defer data-domain="agentifybots.com" src="https://plausible.io/js/script.js" />
+        
+        {/* Organization Schema for Google Search */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "url": "https://www.agentifybots.com",
+              "logo": "https://www.agentifybots.com/agentify-logo.png",
+              "name": "Agentify",
+              "description": "Agentify builds practical AI agents for SMEs. Automate bookings, summaries, replies, and reports to save hours every week.",
+              "sameAs": [
+                "https://www.linkedin.com/company/agentify",
+                "https://www.instagram.com/agentifybots",
+                "https://x.com/agentifybots"
+              ]
+            })
+          }}
+        />
+        
+        {/* Favicon and Icons */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/agentify-logo.png" />
       </head>
       <body>
         {children}
