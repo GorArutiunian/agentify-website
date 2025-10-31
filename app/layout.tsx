@@ -5,7 +5,7 @@ import { siteConfig } from '@/site.config'
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.agentifybots.com'),
   title: {
-    default: siteConfig.name,
+    default: 'Agentify',
     template: '%s — Agentify'
   },
   description:
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     images: [{ url: "/og-image.svg", width: 1200, height: 630 }],
     type: "website",
   },
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "/agentify-logo.png" },
 }
 
 export const viewport: Viewport = {
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         
         {/* Favicon and Icons */}
-        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/agentify-logo.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/agentify-logo.png" />
       </head>

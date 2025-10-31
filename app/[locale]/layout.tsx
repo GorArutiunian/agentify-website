@@ -11,7 +11,7 @@ import CookieConsent from '@/components/cookie-consent'
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: 'Agentify',
     template: '%s — Agentify'
   },
   description:
