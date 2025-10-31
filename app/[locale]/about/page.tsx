@@ -81,56 +81,6 @@ export default function AboutPage() {
       {/* Philosophy Section */}
       <Philosophy />
 
-      {/* Our Team Section */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724]">
-        {/* Glowing line separators */}
-        <span className="pointer-events-none absolute inset-x-0 -top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
-        <span className="pointer-events-none absolute inset-x-0 -top-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent shadow-[0_0_20px_rgba(255,255,255,0.8)] blur-[1px]"></span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.6)] blur-[2px]"></span>
-
-        <div className="container-responsive relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-              MEET THE <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-hotpink to-brand-magenta">A-TEAM</span>
-            </h2>
-            <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto">
-              Founded by AI experts who have spent years perfecting the art of intelligent automation. With our elusive company culture, caliber of clientele, and deep technical expertise, we've attracted the best talent globally.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
-            {[
-              {
-                name: "Ashot Zargaryan",
-                role: "HEAD OF OPERATIONS",
-                description: "Client relations and business development specialist"
-              },
-              {
-                name: "Gor Arutiunian",
-                role: "FOUNDER & CEO",
-                description: "AI automation expert specializing in business process optimization"
-              },
-              {
-                name: "Arsen Hambardzumyan",
-                role: "LEAD DEVELOPER",
-                description: "Full-stack developer and AI integration specialist"
-              }
-            ].map((member, index) => (
-              <div key={index} className="text-center group">
-                {/* Beautiful gradient circle with initials instead of images */}
-                <div className="w-16 h-16 bg-gradient-to-br from-brand-hotpink to-brand-magenta rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-white font-bold text-xl">{member.name.split(' ').map(n => n[0]).join('')}</span>
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{member.name}</h3>
-                <p className="text-brand-hotpink font-bold text-xs md:text-sm mb-3">{member.role}</p>
-                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Our Process Section */}
       <section className="bg-gradient-to-br from-[#130724] via-[#1a0a2e] via-[#2D1B69] to-[#130724] text-white py-20 relative overflow-hidden">
         {/* Glowing line separators */}
